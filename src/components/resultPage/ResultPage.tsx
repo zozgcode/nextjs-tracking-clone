@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
 import { Package } from "../../utils/types";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,7 +12,7 @@ interface ResultPageProps {
 }
 
 export default function ResultPage({ packageInfo }: ResultPageProps) {
-  const steps = [
+  const steps = useMemo(() => [
     {
       label: "Package Received By Fedex",
       datetime: `${packageInfo.package_received_date}T${packageInfo.package_received_time}`,
@@ -29,11 +29,11 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
       label: "Delivered",
       datetime: `${packageInfo.estimated_delivery_date}T${packageInfo.estimated_delivery_time}`,
     },
-  ];
+  ], [packageInfo]);
 
   const [currentStep, setCurrentStep] = useState<number>(-1);
 
-  const calculateStep = () => {
+  const calculateStep = useCallback(() => {
     const now = new Date().getTime();
     let step = -1;
 
@@ -46,14 +46,14 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
     }
 
     setCurrentStep(step);
-  };
+  }, [steps]);
 
   useEffect(() => {
     calculateStep(); // Initial update
     const interval = setInterval(calculateStep, 1000 * 60); // Update every minute
 
     return () => clearInterval(interval);
-  }, []);
+  }, [calculateStep]);
 
   const formatDate = (datetime: string) => {
     const options: Intl.DateTimeFormatOptions = {
@@ -88,7 +88,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
         return "Unknown";
     }
   };
-
+  
   return (
     <div className="w-full p-[16px] text-[#333333]">
       <div className="max-w-[1000px] mx-auto">
@@ -128,14 +128,6 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
                 </div>
               </div>
             ))}
-            {/* {packageInfo.tracking_number === "TRK0011234567890" && (
-                  <div className="pl-16 max-w-[500px]">
-                    Note: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Eaque consectetur exercitationem quisquam officiis repudiandae
-                    aperiam at nesciunt, nobis molestiae quibusdam in explicabo omnis
-                    optio nulla molestias perspiciatis laborum, reprehenderit officia.
-                  </div>
-            )} */}
           </div>
           {/* SENDER'S INFO */}
           <div>
