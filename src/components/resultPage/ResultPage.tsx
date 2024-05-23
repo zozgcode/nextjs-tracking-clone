@@ -12,24 +12,35 @@ interface ResultPageProps {
 }
 
 export default function ResultPage({ packageInfo }: ResultPageProps) {
-  const steps = useMemo(() => [
-    {
-      label: "Package Received By Fedex",
-      datetime: `${packageInfo.package_received_date}T${packageInfo.package_received_time}`,
-    },
-    {
-      label: "In Transit",
-      datetime: `${packageInfo.in_transit_date}T${packageInfo.in_transit_time}`,
-    },
-    {
-      label: "Out for Delivery",
-      datetime: `${packageInfo.out_for_delivery_date}T${packageInfo.out_for_delivery_time}`,
-    },
-    {
-      label: "Delivered",
-      datetime: `${packageInfo.estimated_delivery_date}T${packageInfo.estimated_delivery_time}`,
-    },
-  ], [packageInfo]);
+  const steps = useMemo(() => {
+    const stepList = [
+      {
+        label: "Package Received By Fedex",
+        datetime: `${packageInfo.package_received_date}T${packageInfo.package_received_time}`,
+      },
+      {
+        label: "In Transit",
+        datetime: `${packageInfo.in_transit_date}T${packageInfo.in_transit_time}`,
+      },
+      {
+        label: "Out for Delivery",
+        datetime: `${packageInfo.out_for_delivery_date}T${packageInfo.out_for_delivery_time}`,
+      },
+      {
+        label: "Delivered",
+        datetime: `${packageInfo.estimated_delivery_date}T${packageInfo.estimated_delivery_time}`,
+      },
+    ];
+
+    if (packageInfo.on_hold_date && packageInfo.on_hold_time) {
+      stepList.splice(3, 0, {
+        label: "On Hold",
+        datetime: `${packageInfo.on_hold_date}T${packageInfo.on_hold_time}`,
+      });
+    }
+
+    return stepList;
+  }, [packageInfo]);
 
   const [currentStep, setCurrentStep] = useState<number>(-1);
 
@@ -88,7 +99,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
         return "Unknown";
     }
   };
-  
+
   return (
     <div className="w-full p-[16px] text-[#333333]">
       <div className="max-w-[1000px] mx-auto">
@@ -234,59 +245,93 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
             <div>
               <div className="bg-[#858585] text-white flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Weight (kg)</div>
-                <div className="w-full p-3 py-2">{packageInfo.package_details.weight_kg}kg</div>
+                <div className="w-full p-3 py-2">
+                  {packageInfo.package_details.weight_kg}kg
+                </div>
               </div>
               <div className="bg-gray-100 flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Courier</div>
-                <div className="w-full p-3 py-2">{packageInfo.package_details.courier}</div>
+                <div className="w-full p-3 py-2">
+                  {packageInfo.package_details.courier}
+                </div>
               </div>
               <div className="bg-[#858585] text-white flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Packages</div>
-                <div className="w-full p-3 py-2">{packageInfo.package_details.packages}</div>
+                <div className="w-full p-3 py-2">
+                  {packageInfo.package_details.packages}
+                </div>
               </div>
               <div className="bg-gray-100 flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Quantity</div>
-                <div className="w-full p-3 py-2">{packageInfo.package_details.quantity}</div>
+                <div className="w-full p-3 py-2">
+                  {packageInfo.package_details.quantity}
+                </div>
               </div>
               <div className="bg-[#858585] text-white flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Payment Mode</div>
-                <div className="w-full p-3 py-2">{packageInfo.package_details.paymentMode}</div>
+                <div className="w-full p-3 py-2">
+                  {packageInfo.package_details.paymentMode}
+                </div>
               </div>
               <div className="bg-gray-100 flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Origin</div>
-                <div className="w-full p-3 py-2">{packageInfo.package_details.origin}</div>
+                <div className="w-full p-3 py-2">
+                  {packageInfo.package_details.origin}
+                </div>
               </div>
               <div className="bg-[#858585] text-white flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Destination</div>
-                <div className="w-full p-3 py-2">{packageInfo.package_details.destination}</div>
+                <div className="w-full p-3 py-2">
+                  {packageInfo.package_details.destination}
+                </div>
               </div>
               <div className="bg-gray-100 flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Pickup Date</div>
-                <div className="w-full p-3 py-2">{formatDate(packageInfo.package_received_date)}</div>
+                <div className="w-full p-3 py-2">
+                  {formatDate(packageInfo.package_received_date)}
+                </div>
               </div>
               <div className="bg-[#858585] text-white flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Pickup Time</div>
-                <div className="w-full p-3 py-2">{formatTime(`${packageInfo.package_received_date}T${packageInfo.package_received_time}`)}</div>
+                <div className="w-full p-3 py-2">
+                  {formatTime(
+                    `${packageInfo.package_received_date}T${packageInfo.package_received_time}`
+                  )}
+                </div>
               </div>
               <div className="bg-gray-100 flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Status</div>
                 <div className="w-full p-3 py-2">{getStatus(currentStep)}</div>
               </div>
               <div className="bg-[#858585] text-white flex items-center justify-between">
-                <div className="w-full p-3 py-2 border-r">Estimated Delivery Date</div>
-                <div className="w-full p-3 py-2">{formatDate(packageInfo.estimated_delivery_date)}</div>
+                <div className="w-full p-3 py-2 border-r">
+                  Estimated Delivery Date
+                </div>
+                <div className="w-full p-3 py-2">
+                  {formatDate(packageInfo.estimated_delivery_date)}
+                </div>
               </div>
               <div className="bg-gray-100 flex items-center justify-between">
-                <div className="w-full p-3 py-2 border-r">Estimated Delivery Time</div>
-                <div className="w-full p-3 py-2">{formatTime(`${packageInfo.estimated_delivery_date}T${packageInfo.estimated_delivery_time}`)}</div>
+                <div className="w-full p-3 py-2 border-r">
+                  Estimated Delivery Time
+                </div>
+                <div className="w-full p-3 py-2">
+                  {formatTime(
+                    `${packageInfo.estimated_delivery_date}T${packageInfo.estimated_delivery_time}`
+                  )}
+                </div>
               </div>
               <div className="bg-[#858585] text-white flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Mode</div>
-                <div className="w-full p-3 py-2">{packageInfo.package_details.mode}</div>
+                <div className="w-full p-3 py-2">
+                  {packageInfo.package_details.mode}
+                </div>
               </div>
               <div className="bg-gray-100 flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Comment</div>
-                <div className="w-full p-3 py-2">{packageInfo.package_details.comment}</div>
+                <div className="w-full p-3 py-2">
+                  {packageInfo.package_details.comment}
+                </div>
               </div>
             </div>
           </div>

@@ -37,6 +37,8 @@ export interface Package {
   in_transit_time: string;
   out_for_delivery_date: string;
   out_for_delivery_time: string;
+  on_hold_date?: string;
+  on_hold_time?: string;
   estimated_delivery_date: string;
   estimated_delivery_time: string;
 }
