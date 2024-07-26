@@ -29,12 +29,13 @@ export interface Package {
     origin: string;
     destination: string;
     comment: string;
+    status?: string;
     value_usd: number;
   };
   package_received_date: string;
   package_received_time: string;
-  in_transit_date: string;
-  in_transit_time: string;
+  in_transit_date?: string;
+  in_transit_time?: string;
   out_for_delivery_date: string;
   out_for_delivery_time: string;
   on_hold_date?: string;

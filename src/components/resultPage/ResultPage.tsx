@@ -333,6 +333,12 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
                   {packageInfo.package_details.comment}
                 </div>
               </div>
+              <div className="bg-[#858585] text-white flex items-center justify-between">
+                <div className="w-full p-3 py-2 border-r">Status</div>
+                <div className="w-full p-3 py-2">
+                  {packageInfo.package_details.status}
+                </div>
+              </div>
             </div>
           </div>
         </div>
