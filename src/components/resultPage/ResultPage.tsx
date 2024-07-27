@@ -56,8 +56,16 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
       }
     }
 
+    // Ensure that if the package is on hold, it cannot move to Delivered
+    if (packageInfo.on_hold_date && packageInfo.on_hold_time) {
+      const onHoldIndex = steps.findIndex(step => step.label === "On Hold");
+      if (step > onHoldIndex) {
+        step = onHoldIndex;
+      }
+    }
+
     setCurrentStep(step);
-  }, [steps]);
+  }, [steps, packageInfo]);
 
   useEffect(() => {
     calculateStep(); // Initial update
@@ -86,6 +94,12 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
   };
 
   const getStatus = (step: number) => {
+    if (packageInfo.on_hold_date && packageInfo.on_hold_time) {
+      const onHoldIndex = steps.findIndex(step => step.label === "On Hold");
+      if (step >= onHoldIndex) {
+        return "On Hold";
+      }
+    }
     switch (step) {
       case 0:
         return "Package Received";
@@ -99,7 +113,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
         return "Unknown";
     }
   };
-
+  
   return (
     <div className="w-full p-[16px] text-[#333333]">
       <div className="max-w-[1000px] mx-auto">
