@@ -13,29 +13,33 @@ interface ResultPageProps {
 
 export default function ResultPage({ packageInfo }: ResultPageProps) {
   const steps = useMemo(() => {
+    const formatDatetime = (date: string | undefined, time: string | undefined) => {
+      return date && time ? `${date}T${time}` : '';
+    };
+
     const stepList = [
       {
         label: 'Package Received By FEDEX',
-        datetime: `${packageInfo.package_received_date}T${packageInfo.package_received_time}`
+        datetime: formatDatetime(packageInfo.package_received_date, packageInfo.package_received_time)
       },
       {
         label: 'In Transit',
-        datetime: `${packageInfo.in_transit_date}T${packageInfo.in_transit_time}`
+        datetime: formatDatetime(packageInfo.in_transit_date, packageInfo.in_transit_time)
       },
       {
         label: 'Out for Delivery',
-        datetime: `${packageInfo.out_for_delivery_date}T${packageInfo.out_for_delivery_time}`
+        datetime: formatDatetime(packageInfo.out_for_delivery_date, packageInfo.out_for_delivery_time)
       },
       {
         label: 'Delivered',
-        datetime: `${packageInfo.estimated_delivery_date}T${packageInfo.estimated_delivery_time}`
+        datetime: formatDatetime(packageInfo.estimated_delivery_date, packageInfo.estimated_delivery_time)
       }
     ];
 
     if (packageInfo.on_hold_date && packageInfo.on_hold_time) {
       stepList.splice(3, 0, {
         label: 'On Hold',
-        datetime: `${packageInfo.on_hold_date}T${packageInfo.on_hold_time}`
+        datetime: formatDatetime(packageInfo.on_hold_date, packageInfo.on_hold_time)
       });
     }
 
@@ -49,7 +53,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
     let step = -1;
 
     for (let i = 0; i < steps.length; i++) {
-      if (now >= new Date(steps[i].datetime).getTime()) {
+      if (steps[i].datetime && now >= new Date(steps[i].datetime).getTime()) {
         step = i;
       } else {
         break;
@@ -67,6 +71,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
   }, [calculateStep]);
 
   const formatDate = (datetime: string) => {
+    if (!datetime) return '';
     const options: Intl.DateTimeFormatOptions = {
       year: 'numeric',
       month: 'long',
@@ -76,6 +81,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
   };
 
   const formatTime = (datetime: string) => {
+    if (!datetime) return '';
     const options: Intl.DateTimeFormatOptions = {
       hour: '2-digit',
       minute: '2-digit',
@@ -95,7 +101,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
         return 'Out for Delivery';
       case 3:
         return 'On Hold';
-      case 3:
+      case 4:
         return 'Delivered';
       default:
         return 'Processing';
@@ -119,10 +125,12 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
                 <div className="circle"></div>
                 <div className="content">
                   <p className="label text-base font-semibold uppercase">{step.label}</p>
-                  <p className="text-sm flex flex-col mt-1">
-                    {formatDate(step.datetime)}
-                    <span className="text-[13px]">{formatTime(step.datetime)}</span>
-                  </p>
+                  {step.datetime && (
+                    <p className="text-sm flex flex-col mt-1">
+                      {formatDate(step.datetime)}
+                      <span className="text-[13px]">{formatTime(step.datetime)}</span>
+                    </p>
+                  )}
                 </div>
               </div>
             ))}
