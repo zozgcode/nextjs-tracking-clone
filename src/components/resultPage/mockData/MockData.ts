@@ -150,7 +150,7 @@ export const mockPackages: Package[] = [
       contact_number: "***-***-****",
       email: "kbremodelug77@myyahoo.com",
     },
-    tracking_number: "Fedex/USA/24/0025633",
+    tracking_number: "Fedex/USA/24/0025633_0101",
     package_details: {
       weight_kg: 10,
       dimensions_cm: {
