@@ -178,7 +178,7 @@ export const mockPackages: Package[] = [
     out_for_delivery_time: "11:00:00",
     on_hold_date: "",
     on_hold_time: "",
-    estimated_delivery_date: "2024-10-15",
+    estimated_delivery_date: "2024-09-20",
     estimated_delivery_time: "12:00:00",
     pickup_date: "2024-09-27",
     pickup_time: "15:00:00",
