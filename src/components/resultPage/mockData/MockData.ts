@@ -139,18 +139,18 @@ export const mockPackages: Package[] = [
   {
     package_id: "PKG004",
     sender: {
-      name: "Edward Todd",
+      name: "Cindy Wheeler",
       address: "California",
-      contact_number: "863-692-****",
+      contact_number: "+1 (740) 552‑3830",
       email: "cindywheeler610@gmail.com",
     },
     recipient: {
-      name: "Kenneth Brunson",
-      address: "651 Decatur village way Apt 1305 Decatur,Ga, 30033",
+      name: "Ricardo Ivan Mercado",
+      address: "4 Rue Pierre Brossoleite Appartement 3, 76770 Malauna. Rouen Francia",
       contact_number: "***-***-****",
-      email: "kbremodelug77@myyahoo.com",
+      email: "******",
     },
-    tracking_number: "Fedex/USA/24/0025633_0101",
+    tracking_number: "Fedex/USA/24/0025633",
     package_details: {
       weight_kg: 10,
       dimensions_cm: {
