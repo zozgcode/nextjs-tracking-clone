@@ -131,10 +131,16 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
                       <span className="text-[13px]">{formatTime(step.datetime)}</span>
                     </p>
                   )}
+                  {step.label === 'On Hold' && packageInfo.on_hold_desc && (
+                    <div className="max-w-[300px] mt-2 p-3 text-sm bg-yellow-200 rounded">
+                      {packageInfo.on_hold_desc}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
           </div>
+
           {/* SENDER'S INFO */}
           <div>
             <div className="p-4 pl-0 flex items-center  gap-3 mt-[10px] font-semibold">

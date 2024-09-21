@@ -40,6 +40,7 @@ export interface Package {
   out_for_delivery_time: string;
   on_hold_date?: string;
   on_hold_time?: string;
+  on_hold_desc?: string;
   estimated_delivery_date: string;
   estimated_delivery_time: string;
   pickup_date?: string;
