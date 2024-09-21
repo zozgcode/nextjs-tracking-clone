@@ -133,7 +133,9 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
                   )}
                   {step.label === 'On Hold' && packageInfo.on_hold_desc && (
                     <div className="max-w-[300px] mt-2 p-3 text-sm bg-yellow-200 rounded">
-                      {packageInfo.on_hold_desc}
+                      {packageInfo.on_hold_desc.split('800')[0]}
+                      <span className="text-red-500 font-bold">800</span>
+                      {packageInfo.on_hold_desc.split('800')[1]}
                     </div>
                   )}
                 </div>

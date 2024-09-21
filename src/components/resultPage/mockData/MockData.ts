@@ -178,7 +178,7 @@ export const mockPackages: Package[] = [
     out_for_delivery_time: "11:00:00",
     on_hold_date: "2024-09-20",
     on_hold_time: "09:00:00",
-    on_hold_desc: "Votre colis est bien arrivé en France et vous le fera livrer à votre adresse à Paris Vous devrez déposer 1200 au FMI pour que le paquet puisse vous être remis.",
+    on_hold_desc: "Votre colis est bien arrivé en France et vous le fera livrer à votre adresse à Paris Vous devrez déposer 800 au FMI pour que le paquet puisse vous être remis.",
     estimated_delivery_date: "",
     estimated_delivery_time: "",
     pickup_date: "2024-09-27",
