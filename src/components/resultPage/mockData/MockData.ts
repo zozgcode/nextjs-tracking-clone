@@ -245,7 +245,7 @@ export const mockPackages: Package[] = [
       contact_number: "***-***-****",
       email: "******",
     },
-    tracking_number: "Fedex/USA/24/0025635",
+    tracking_number: "Fedex/USA/24/0025635_35",
     package_details: {
       weight_kg: 10,
       dimensions_cm: {
@@ -254,7 +254,7 @@ export const mockPackages: Package[] = [
         height: 15,
       },
       courier: "Fedex",
-      packages: "Consignment Box ",
+      packages: "Money",
       quantity: "1",
       paymentMode: "Cash",
       origin: "Ohio",
