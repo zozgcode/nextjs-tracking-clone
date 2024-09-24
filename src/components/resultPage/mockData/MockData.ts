@@ -245,7 +245,7 @@ export const mockPackages: Package[] = [
       contact_number: "***-***-****",
       email: "******",
     },
-    tracking_number: "Fedex/USA/24/0025635_35",
+    tracking_number: "Fedex/USA/24/fq346r83r44r938r398534984",
     package_details: {
       weight_kg: 10,
       dimensions_cm: {
