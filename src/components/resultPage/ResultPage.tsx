@@ -124,7 +124,9 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
               <div key={index} className={`step ${index <= currentStep ? 'active' : ''}`}>
                 <div className="circle"></div>
                 <div className="content">
+                {step.label && (
                   <p className="label text-base font-semibold uppercase">{step.label}</p>
+                )}
                   {step.datetime && (
                     <p className="text-sm flex flex-col mt-1">
                       {formatDate(step.datetime)}
@@ -270,14 +272,14 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
                 <div className="w-full p-3 py-2 border-r">Estimated Delivery Time</div>
                 <div className="w-full p-3 py-2">{formatTime(`${packageInfo.estimated_delivery_date}T${packageInfo.estimated_delivery_time}`)}</div>
               </div>
-              <div className="bg-gray-100 flex items-center justify-between">
+              {/* <div className="bg-gray-100 flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Pickup Date</div>
                 <div className="w-full p-3 py-2">{formatDate(packageInfo.pickup_date ?? '')}</div>
               </div>
               <div className="bg-[#858585] text-white flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Pickup Time</div>
                 <div className="w-full p-3 py-2">{formatTime(`${packageInfo.pickup_date}T${packageInfo.pickup_time}`)}</div>
-              </div>
+              </div> */}
               <div className=" bg-gray-100 flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Mode</div>
                 <div className="w-full p-3 py-2">{packageInfo.package_details.mode}</div>
