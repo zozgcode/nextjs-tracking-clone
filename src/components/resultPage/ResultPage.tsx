@@ -271,14 +271,14 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
                 <div className="w-full p-3 py-2 border-r">Estimated Delivery Time</div>
                 <div className="w-full p-3 py-2">{formatTime(`${packageInfo.estimated_delivery_date}T${packageInfo.estimated_delivery_time}`)}</div>
               </div>
-              <div className="bg-gray-100 flex items-center justify-between">
+              {/* <div className="bg-gray-100 flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Pickup Date</div>
                 <div className="w-full p-3 py-2">{formatDate(packageInfo.pickup_date ?? '')}</div>
               </div>
               <div className="bg-[#858585] text-white flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Pickup Time</div>
                 <div className="w-full p-3 py-2">{formatTime(`${packageInfo.pickup_date}T${packageInfo.pickup_time}`)}</div>
-              </div>
+              </div> */}
               <div className=" bg-gray-100 flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Mode</div>
                 <div className="w-full p-3 py-2">{packageInfo.package_details.mode}</div>
