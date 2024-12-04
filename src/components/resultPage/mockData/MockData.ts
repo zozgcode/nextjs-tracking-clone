@@ -323,5 +323,50 @@ export const mockPackages: Package[] = [
     estimated_delivery_date: '2024-10-19',
     estimated_delivery_time: '15:00:00',
    
+  },
+  {
+    package_id: 'PKG008',
+    sender: {
+      name: 'IDA GRANT',
+      address: 'Fayetteville, Arkansas ',
+      contact_number: '***-****-****',
+      email: 'idagrant2024@gmail.com'
+    },
+    recipient: {
+      name: 'Beth Cutrell ',
+      address: '1215 S. Brady St. Accita Indiana 47918',
+      contact_number: '***-****-****',
+      email: 'bethcutrell@gmail.com'
+    },
+    tracking_number: 'Fedex/USA/24/0025638',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Money Box',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'Oklahoma',
+      destination: 'Tallinn, Estonia',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2024-10-17',
+    package_received_time: '09:00:00',
+    in_transit_date: '2024-10-17',
+    in_transit_time: '11:00:00',
+    out_for_delivery_date: '',
+    out_for_delivery_time: '',
+    on_hold_date: '2024-10-18',
+    on_hold_time: '12:15:00',
+    estimated_delivery_date: '2024-10-19',
+    estimated_delivery_time: '15:00:00',
   }
 ];
