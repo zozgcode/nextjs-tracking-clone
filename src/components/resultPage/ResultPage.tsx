@@ -95,7 +95,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
   const getStatus = (step: number) => {
     switch (step) {
       case 0:
-        return 'Package Received';
+        return 'Processing';
       case 1:
         return 'In Transit';
       case 2:
@@ -283,11 +283,11 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
                 <div className="w-full p-3 py-2 border-r">Mode</div>
                 <div className="w-full p-3 py-2">{packageInfo.package_details.mode}</div>
               </div>
-              <div className="bg-[#858585] text-white flex items-center justify-between">
+              {/* <div className="bg-[#858585] text-white flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Status</div>
                 <div className="w-full p-3 py-2">{packageInfo.package_details.status}</div>
-              </div>
-              <div className="bg-gray-100 flex items-center justify-between">
+              </div> */}
+              <div className="bg-[#858585] text-white flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Comment</div>
                 <div className="w-full p-3 py-2">{packageInfo.package_details.comment}</div>
               </div>
