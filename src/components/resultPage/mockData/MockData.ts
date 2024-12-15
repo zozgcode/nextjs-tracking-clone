@@ -368,5 +368,50 @@ export const mockPackages: Package[] = [
     on_hold_time: '',
     estimated_delivery_date: '2024-12-09',
     estimated_delivery_time: '15:00:00',
+  },
+  {
+    package_id: 'PKG009',
+    sender: {
+      name: 'Health and Human Services Veteran Affairs.',
+      address: 'Fayetteville, Arkansas ',
+      contact_number: '253-500-6070',
+      email: 'attorney.david.anderson.010@gmail.com'
+    },
+    recipient: {
+      name: 'Harry E Meyer',
+      address: 'Zolfo Springs,  3014 Spruce Street Fl 33890, Florida',
+      contact_number: '863-8325-248',
+      email: 'meyerh419@gmail.com'
+    },
+    tracking_number: 'Fedex/USA/24/0025639',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: ' FedEx Medium Box',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'Washington, USA',
+      destination: 'Zolfo Springs, Florida',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2024-12-16',
+    package_received_time: '12:00:00',
+    in_transit_date: '',
+    in_transit_time: '',
+    out_for_delivery_date: '',
+    out_for_delivery_time: '',
+    on_hold_date: '',
+    on_hold_time: '',
+    estimated_delivery_date: '2024-12-27',
+    estimated_delivery_time: '10:00:00',
   }
 ];
