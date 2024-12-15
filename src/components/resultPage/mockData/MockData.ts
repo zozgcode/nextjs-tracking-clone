@@ -405,13 +405,13 @@ export const mockPackages: Package[] = [
     // Y-M-D
     package_received_date: '2024-12-16',
     package_received_time: '12:00:00',
-    in_transit_date: '',
-    in_transit_time: '',
+    in_transit_date: '2024-12-16',
+    in_transit_time: '13:00:00',
     out_for_delivery_date: '',
     out_for_delivery_time: '',
     on_hold_date: '',
     on_hold_time: '',
-    estimated_delivery_date: '2024-12-27',
+    estimated_delivery_date: '2022-02-28',
     estimated_delivery_time: '10:00:00',
   }
 ];
