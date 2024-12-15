@@ -411,7 +411,7 @@ export const mockPackages: Package[] = [
     out_for_delivery_time: '',
     on_hold_date: '',
     on_hold_time: '',
-    estimated_delivery_date: '2022-02-28',
+    estimated_delivery_date: '2025-02-28',
     estimated_delivery_time: '10:00:00',
   }
 ];
