@@ -409,9 +409,9 @@ export const mockPackages: Package[] = [
     in_transit_time: '13:00:00',
     out_for_delivery_date: '',
     out_for_delivery_time: '',
-    on_hold_date: '',
-    on_hold_time: '',
-    estimated_delivery_date: '2025-02-28',
-    estimated_delivery_time: '10:00:00',
+    on_hold_date: '2024-12-27',
+    on_hold_time: '10:00:00',
+    estimated_delivery_date: '2024-12-27',
+    estimated_delivery_time: '12:00:00',
   }
 ];
