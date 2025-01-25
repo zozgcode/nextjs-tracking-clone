@@ -113,9 +113,10 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
     <div className="w-full p-[16px] text-[#333333]">
       <div className="max-w-[1000px] mx-auto">
         <div className="text-right flex items-center justify-between font-semibold p-4">
-          <Link href="/" className="text-3xl font-bold">
+          <Link href="/" className="text-3xl font-bold flex items-baseline">
             <span className="text-[#4d148c]">Fed</span>
             <span className="text-[#ff6600]">Ex</span>
+            <span className="text-sm align-super relative top-[2px] text-red-700">®</span>
           </Link>
           <Link href="/">Go Home</Link>
         </div>
