@@ -16,7 +16,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
     const formatDatetime = (date: string | undefined, time: string | undefined) => {
       return date && time ? `${date}T${time}` : '';
     };
-  
+
     const stepList = [
       {
         label: 'Package Received By FEDEX',
@@ -35,17 +35,17 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
         datetime: formatDatetime(packageInfo.estimated_delivery_date, packageInfo.estimated_delivery_time)
       }
     ];
-  
+
     if (packageInfo.on_hold_date && packageInfo.on_hold_time) {
       stepList.splice(3, 0, {
         label: 'On Hold',
         datetime: formatDatetime(packageInfo.on_hold_date, packageInfo.on_hold_time)
       });
     }
-  
+
     // Filter out steps with empty datetime
     return stepList.filter(step => step.datetime);
-  }, [packageInfo]);  
+  }, [packageInfo]);
 
   const [currentStep, setCurrentStep] = useState<number>(-1);
 
@@ -113,8 +113,9 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
     <div className="w-full p-[16px] text-[#333333]">
       <div className="max-w-[1000px] mx-auto">
         <div className="text-right flex items-center justify-between font-semibold p-4">
-          <Link href="/">
-            <Image src="https://i.imgur.com/qyBZDD9.png" width={500} height={500} className="w-[100px]" alt="" />
+          <Link href="/" className="text-3xl font-bold">
+            <span className="text-[#4d148c]">Fed</span>
+            <span className="text-[#ff6600]">Ex</span>
           </Link>
           <Link href="/">Go Home</Link>
         </div>
