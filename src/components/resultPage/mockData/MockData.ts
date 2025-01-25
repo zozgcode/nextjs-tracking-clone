@@ -15,7 +15,7 @@ export const mockPackages: Package[] = [
       contact_number: '555-5678',
       email: 'recipient@example.com'
     },
-    tracking_number: 'Fedex/USA/24/0011111',
+    tracking_number: 'sample',
     package_details: {
       weight_kg: 2.5,
       dimensions_cm: {
@@ -413,5 +413,50 @@ export const mockPackages: Package[] = [
     on_hold_time: '10:00:00',
     estimated_delivery_date: '',
     estimated_delivery_time: '',
+  },
+  {
+    package_id: 'PKG010',
+    sender: {
+      name: 'Probate Court (James Fletcher)',
+      address: 'San Antonio, Tx, USA',
+      contact_number: '346-648-8430',
+      email: 'jimgrah9@gmail.com'
+    },
+    recipient: {
+      name: 'Lynn Nolan Bishop',
+      address: '67 W 300 N, Manti UT 84642',
+      contact_number: '***-***-***',
+      email: '******'
+    },
+    tracking_number: 'Fedex/USA/24/0025640',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Gold',
+      quantity: '5',
+      paymentMode: 'Cash',
+      origin: 'San Antonio, Tx, USA',
+      destination: 'Utah, USA',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-01-25',
+    package_received_time: '08:00:00',
+    in_transit_date: '2025-01-26',
+    in_transit_time: '08:00:00',
+    out_for_delivery_date: '2025-01-26',
+    out_for_delivery_time: '13:00:00',
+    on_hold_date: '',
+    on_hold_time: '',
+    estimated_delivery_date: '2025-01-28',
+    estimated_delivery_time: '09:00:00',
   }
 ];
