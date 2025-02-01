@@ -458,5 +458,50 @@ export const mockPackages: Package[] = [
     on_hold_time: '',
     estimated_delivery_date: '2025-01-28',
     estimated_delivery_time: '09:00:00',
+  },
+  {
+    package_id: 'PKG011',
+    sender: {
+      name: 'US ARMY (Sergeant JANICE retirement funds)',
+      address: 'Forte Hunter ligget California',
+      contact_number: '+1-240-903-0063',
+      email: 'brookwoodjanice60@gmail.com'
+    },
+    recipient: {
+      name: 'KALAULI ALEXANDER',
+      address: '656 AUEAIOLIMU ST HONOLULU, HI 96813',
+      contact_number: '+1-808-563-6454',
+      email: '******'
+    },
+    tracking_number: 'Fedex/USA/24/0025641',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Bag of Money',
+      quantity: '1',
+      paymentMode: 'Cashapp',
+      origin: 'California, USA',
+      destination: 'Hawaii, USA',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-01-31',
+    package_received_time: '11:12:00',
+    in_transit_date: '2025-02-01',
+    in_transit_time: '08:00:00',
+    out_for_delivery_date: '2025-02-01',
+    out_for_delivery_time: '13:00:00',
+    on_hold_date: '',
+    on_hold_time: '',
+    estimated_delivery_date: '2025-02-05',
+    estimated_delivery_time: '09:00:00',
   }
 ];
