@@ -515,7 +515,7 @@ export const mockPackages: Package[] = [
     recipient: {
       name: 'Marilyn Goldberg',
       address: '129 Lakeland Avenue Sayville NY 11782-1995',
-      contact_number: '+1-104-003-2925',
+      contact_number: '+1-***-***-****',
       email: 'wesleyhatton232@gmail.com'
     },
     tracking_number: 'Fedex/USA/24/0025642',
