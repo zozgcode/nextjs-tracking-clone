@@ -510,7 +510,7 @@ export const mockPackages: Package[] = [
       name: 'Old Mutual Insurance Company',
       address: 'Johannesburg South African',
       contact_number: '+1-213-809-4188',
-      email: 'wesleyhatton232@gmail.com'
+      email: 'insuranceafricaofficialgovernm@gmail.com'
     },
     recipient: {
       name: 'Marilyn Goldberg',
@@ -529,12 +529,12 @@ export const mockPackages: Package[] = [
       courier: 'Fedex',
       packages: 'Briefcase',
       quantity: '2',
-      paymentMode: '$1,300,00 in Cash & houses keys',
-      origin: 'South African ',
+      paymentMode: 'Cash & houses keys',
+      origin: 'South African',
       destination: '129 Lakeland Avenue Sayville NY 11782-1995',
       comment: 'Handle with care',
       status: 'Out for delivery',
-      mode: 'Road',
+      mode: 'Ship',
       value_usd: 50.0
     },
     // Y-M-D
