@@ -530,7 +530,7 @@ export const mockPackages: Package[] = [
       packages: 'Briefcase',
       quantity: '2',
       paymentMode: 'Cash & houses keys',
-      origin: 'South African',
+      origin: 'USA',
       destination: '129 Lakeland Avenue Sayville NY 11782-1995',
       comment: 'Handle with care',
       status: 'Out for delivery',
