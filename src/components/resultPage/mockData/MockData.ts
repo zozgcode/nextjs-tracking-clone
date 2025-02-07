@@ -503,5 +503,50 @@ export const mockPackages: Package[] = [
     on_hold_time: '',
     estimated_delivery_date: '2025-02-05',
     estimated_delivery_time: '09:00:00',
+  },
+  {
+    package_id: 'PKG012',
+    sender: {
+      name: 'Old Mutual Insurance Company',
+      address: 'Johannesburg South African',
+      contact_number: '+1-213-809-4188',
+      email: 'wesleyhatton232@gmail.com'
+    },
+    recipient: {
+      name: 'Marilyn Goldberg',
+      address: '129 Lakeland Avenue Sayville NY 11782-1995',
+      contact_number: '+1-104-003-2925',
+      email: 'wesleyhatton232@gmail.com'
+    },
+    tracking_number: 'Fedex/USA/24/0025642',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Briefcase',
+      quantity: '2',
+      paymentMode: '$1,300,00 in Cash & houses keys',
+      origin: 'South African ',
+      destination: '129 Lakeland Avenue Sayville NY 11782-1995',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-02-07',
+    package_received_time: '09:12:00',
+    in_transit_date: '2025-03-16',
+    in_transit_time: '08:00:00',
+    out_for_delivery_date: '2025-03-17',
+    out_for_delivery_time: '13:00:00',
+    on_hold_date: '',
+    on_hold_time: '',
+    estimated_delivery_date: '2025-03-21',
+    estimated_delivery_time: '09:00:00',
   }
 ];
