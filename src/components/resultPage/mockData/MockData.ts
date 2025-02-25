@@ -579,7 +579,7 @@ export const mockPackages: Package[] = [
       destination: 'Oregon USA',
       comment: 'Handle with care',
       status: 'Out for delivery',
-      mode: 'Ship',
+      mode: 'Road',
       value_usd: 50.0
     },
     // Y-M-D
@@ -591,7 +591,7 @@ export const mockPackages: Package[] = [
     out_for_delivery_time: '13:00:00',
     on_hold_date: '',
     on_hold_time: '',
-    estimated_delivery_date: '2025-02-25',
-    estimated_delivery_time: '09:00:00',
+    estimated_delivery_date: '2025-02-26',
+    estimated_delivery_time: '21:00:00',
   }
 ];
