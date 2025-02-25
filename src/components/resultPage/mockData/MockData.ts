@@ -548,5 +548,50 @@ export const mockPackages: Package[] = [
     on_hold_time: '',
     estimated_delivery_date: '2025-03-21',
     estimated_delivery_time: '09:00:00',
+  },
+  {
+    package_id: 'PKG013',
+    sender: {
+      name: 'Blinks Insurance Company',
+      address: 'Miami, FL',
+      contact_number: '+1-507-262-6200',
+      email: '******'
+    },
+    recipient: {
+      name: 'Tamara McKee',
+      address: '18314 sw 135th Terrace Tualatin Oregon 97062',
+      contact_number: '503****',
+      email: 'Tami******gmail.com'
+    },
+    tracking_number: 'Fedex/USA/24/0025643',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Briefcase',
+      quantity: '1',
+      paymentMode: 'Cash App',
+      origin: 'Portland',
+      destination: 'Oregon USA',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Ship',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-02-22',
+    package_received_time: '09:12:00',
+    in_transit_date: '2025-02-23',
+    in_transit_time: '08:00:00',
+    out_for_delivery_date: '2025-02-23',
+    out_for_delivery_time: '13:00:00',
+    on_hold_date: '',
+    on_hold_time: '',
+    estimated_delivery_date: '2025-02-25',
+    estimated_delivery_time: '09:00:00',
   }
 ];
