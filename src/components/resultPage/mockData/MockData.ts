@@ -540,13 +540,13 @@ export const mockPackages: Package[] = [
     // Y-M-D
     package_received_date: '2025-02-07',
     package_received_time: '09:12:00',
-    in_transit_date: '2025-03-16',
+    in_transit_date: '2025-02-25',
     in_transit_time: '08:00:00',
-    out_for_delivery_date: '2025-03-17',
+    out_for_delivery_date: '2025-02-26',
     out_for_delivery_time: '13:00:00',
     on_hold_date: '',
     on_hold_time: '',
-    estimated_delivery_date: '2025-03-21',
+    estimated_delivery_date: '2025-03-03',
     estimated_delivery_time: '09:00:00',
   },
   {
@@ -591,7 +591,7 @@ export const mockPackages: Package[] = [
     out_for_delivery_time: '13:00:00',
     on_hold_date: '',
     on_hold_time: '',
-    estimated_delivery_date: '2025-02-26',
-    estimated_delivery_time: '21:00:00',
+    estimated_delivery_date: '2025-02-27',
+    estimated_delivery_time: '19:00:00',
   }
 ];
