@@ -593,5 +593,51 @@ export const mockPackages: Package[] = [
     on_hold_time: '',
     estimated_delivery_date: '2025-02-27',
     estimated_delivery_time: '19:00:00',
+  },
+  {
+    package_id: 'PKG014',
+    sender: {
+      name: 'PCH',
+      address: '6901 Jericho Tpke, Syosset, New York',
+      contact_number: '******',
+      email: '******'
+    },
+    recipient: {
+      name: 'Dave Van Grouw',
+      address: '606 3rd Ave Alton Iowa 51003',
+      contact_number: '******',
+      email: '******'
+    },
+    tracking_number: 'Fedex/USA/24/0025644',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Box',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'New York, USA',
+      destination: 'Alton Iowa, USA',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-03-08',
+    package_received_time: '09:12:00',
+    in_transit_date: '2025-03-09',
+    in_transit_time: '08:00:00',
+    out_for_delivery_date: '2025-03-10',
+    out_for_delivery_time: '13:00:00',
+    on_hold_date: '2025-03-11',
+    on_hold_time: '14:00:00',
+    on_hold_desc: 'Your package is currently on hold. A payment of $1,750 is required to proceed with the delivery. Please complete the payment at your earliest convenience to ensure prompt delivery',
+    estimated_delivery_date: '2025-03-20',
+    estimated_delivery_time: '16:00:00',
   }
 ];
