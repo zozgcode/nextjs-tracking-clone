@@ -644,7 +644,7 @@ export const mockPackages: Package[] = [
     package_id: 'PKG015',
     sender: {
       name: 'James Hollet',
-      address: '1443 Raleigh Wilson Road Bowling Green Kentucky 42101',
+      address: 'Los Angeles, CA, USA',
       contact_number: '304303**',
       email: 'jamesh@gmail.com'
     },
@@ -666,7 +666,7 @@ export const mockPackages: Package[] = [
       packages: 'Briefcase',
       quantity: '1',
       paymentMode: 'Cash',
-      origin: 'Los Angeles CA, USA',
+      origin: 'Los Angeles, CA, USA',
       destination: '1443 Raleigh Wilson Road Bowling Green Kentucky 42101',
       comment: 'Handle with care',
       status: 'Out for delivery',
