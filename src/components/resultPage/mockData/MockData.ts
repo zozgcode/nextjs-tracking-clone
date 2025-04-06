@@ -639,5 +639,51 @@ export const mockPackages: Package[] = [
     on_hold_desc: 'Your package is currently on hold. A payment of $1,750 is required to proceed with the delivery. Please complete the payment at your earliest convenience to ensure prompt delivery',
     estimated_delivery_date: '2025-03-20',
     estimated_delivery_time: '16:00:00',
+  },
+  {
+    package_id: 'PKG015',
+    sender: {
+      name: 'James Hollet',
+      address: '1443 Raleigh Wilson Road Bowling Green Kentucky 42101',
+      contact_number: '304303**',
+      email: 'jamesh@gmail.com'
+    },
+    recipient: {
+      name: 'Troy Cowles',
+      address: '1443 Raleigh Wilson Road Bowling Green Kentucky 42101',
+      contact_number: '364203**',
+      email: 'troycowles@gmail.com'
+    },
+    tracking_number: 'Fedex/USA/24/0025615',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Briefcase',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'Los Angeles CA, USA',
+      destination: '1443 Raleigh Wilson Road Bowling Green Kentucky 42101',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-04-05',
+    package_received_time: '08:12:00',
+    in_transit_date: '2025-04-05',
+    in_transit_time: '09:05:00',
+    out_for_delivery_date: '2025-04-05',
+    out_for_delivery_time: '12:21:00',
+    on_hold_date: '',
+    on_hold_time: '',
+    on_hold_desc: '',
+    estimated_delivery_date: '2025-04-07',
+    estimated_delivery_time: '13:00:00',
   }
 ];
