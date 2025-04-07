@@ -680,10 +680,10 @@ export const mockPackages: Package[] = [
     in_transit_time: '09:05:00',
     out_for_delivery_date: '2025-04-06',
     out_for_delivery_time: '10:21:00',
-    on_hold_date: '',
-    on_hold_time: '',
+    on_hold_date: '2025-04-07',
+    on_hold_time: '13:00:00',
     on_hold_desc: '',
-    estimated_delivery_date: '2025-04-07',
-    estimated_delivery_time: '13:00:00',
+    estimated_delivery_date: '',
+    estimated_delivery_time: '',
   }
 ];

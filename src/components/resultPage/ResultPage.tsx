@@ -36,6 +36,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
       }
     ];
 
+    // Only add the "On Hold" step if both date and time are available
     if (packageInfo.on_hold_date && packageInfo.on_hold_time) {
       stepList.splice(3, 0, {
         label: 'On Hold',
@@ -43,8 +44,8 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
       });
     }
 
-    // Filter out steps with empty datetime
-    return stepList.filter(step => step.datetime);
+    // Return all steps - we'll show all of them but conditionally hide date/time when empty
+    return stepList;
   }, [packageInfo]);
 
   const [currentStep, setCurrentStep] = useState<number>(-1);
@@ -108,7 +109,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
         return 'Processing';
     }
   };
-
+  
   return (
     <div className="w-full p-[16px] pb-[80px] text-[#333333]">
       <div className="max-w-[1000px] mx-auto">
