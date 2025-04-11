@@ -708,7 +708,7 @@ export const mockPackages: Package[] = [
         height: 15
       },
       courier: 'Fedex',
-      packages: 'Briefcase',
+      packages: 'Metallic trunk box, bag of money',
       quantity: '1',
       paymentMode: 'Cash',
       origin: 'Cardiff',
