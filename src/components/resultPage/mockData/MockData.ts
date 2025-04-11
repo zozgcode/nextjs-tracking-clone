@@ -712,7 +712,7 @@ export const mockPackages: Package[] = [
       quantity: '1',
       paymentMode: 'Cash',
       origin: 'Cardiff',
-      destination: 'Sponkane WA 99212',
+      destination: 'Spokane WA 99212',
       comment: 'Handle with care',
       status: 'Out for delivery',
       mode: 'Road',
