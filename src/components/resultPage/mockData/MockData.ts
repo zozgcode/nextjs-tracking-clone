@@ -321,8 +321,7 @@ export const mockPackages: Package[] = [
     on_hold_date: '2024-10-18',
     on_hold_time: '12:15:00',
     estimated_delivery_date: '2024-10-19',
-    estimated_delivery_time: '15:00:00',
-   
+    estimated_delivery_time: '15:00:00'
   },
   {
     package_id: 'PKG008',
@@ -367,7 +366,7 @@ export const mockPackages: Package[] = [
     on_hold_date: '',
     on_hold_time: '',
     estimated_delivery_date: '2024-12-09',
-    estimated_delivery_time: '15:00:00',
+    estimated_delivery_time: '15:00:00'
   },
   {
     package_id: 'PKG009',
@@ -412,7 +411,7 @@ export const mockPackages: Package[] = [
     on_hold_date: '2024-12-27',
     on_hold_time: '10:00:00',
     estimated_delivery_date: '',
-    estimated_delivery_time: '',
+    estimated_delivery_time: ''
   },
   {
     package_id: 'PKG010',
@@ -457,7 +456,7 @@ export const mockPackages: Package[] = [
     on_hold_date: '',
     on_hold_time: '',
     estimated_delivery_date: '2025-01-28',
-    estimated_delivery_time: '09:00:00',
+    estimated_delivery_time: '09:00:00'
   },
   {
     package_id: 'PKG011',
@@ -502,7 +501,7 @@ export const mockPackages: Package[] = [
     on_hold_date: '',
     on_hold_time: '',
     estimated_delivery_date: '2025-02-05',
-    estimated_delivery_time: '09:00:00',
+    estimated_delivery_time: '09:00:00'
   },
   {
     package_id: 'PKG012',
@@ -547,7 +546,7 @@ export const mockPackages: Package[] = [
     on_hold_date: '',
     on_hold_time: '',
     estimated_delivery_date: '2025-03-03',
-    estimated_delivery_time: '09:00:00',
+    estimated_delivery_time: '09:00:00'
   },
   {
     package_id: 'PKG013',
@@ -592,7 +591,7 @@ export const mockPackages: Package[] = [
     on_hold_date: '',
     on_hold_time: '',
     estimated_delivery_date: '2025-02-27',
-    estimated_delivery_time: '19:00:00',
+    estimated_delivery_time: '19:00:00'
   },
   {
     package_id: 'PKG014',
@@ -638,7 +637,7 @@ export const mockPackages: Package[] = [
     on_hold_time: '14:00:00',
     on_hold_desc: 'Your package is currently on hold. A payment of $1,750 is required to proceed with the delivery. Please complete the payment at your earliest convenience to ensure prompt delivery',
     estimated_delivery_date: '2025-03-20',
-    estimated_delivery_time: '16:00:00',
+    estimated_delivery_time: '16:00:00'
   },
   {
     package_id: 'PKG015',
@@ -684,6 +683,52 @@ export const mockPackages: Package[] = [
     on_hold_time: '13:00:00',
     on_hold_desc: '',
     estimated_delivery_date: '',
-    estimated_delivery_time: '',
+    estimated_delivery_time: ''
+  },
+  {
+    package_id: 'PKG016',
+    sender: {
+      name: 'Smart insurance company',
+      address: 'Llandennis Ave, Cardiff CF43 6JJ, UK',
+      contact_number: '******',
+      email: '******'
+    },
+    recipient: {
+      name: 'Robert nuernberger',
+      address: '5211 East Commerce Avenue Spokane WA 99212',
+      contact_number: '******',
+      email: '******'
+    },
+    tracking_number: 'Fedex/USA/24/0025616',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Briefcase',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'Cardiff',
+      destination: 'Sponkane WA 99212',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-04-10',
+    package_received_time: '08:12:00',
+    in_transit_date: '2025-04-10',
+    in_transit_time: '09:05:00',
+    out_for_delivery_date: '2025-04-21',
+    out_for_delivery_time: '10:21:00',
+    on_hold_date: '',
+    on_hold_time: '',
+    on_hold_desc: '',
+    estimated_delivery_date: '2025-04-21',
+    estimated_delivery_time: '13:00:00'
   }
 ];
