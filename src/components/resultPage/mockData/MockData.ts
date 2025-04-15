@@ -730,5 +730,51 @@ export const mockPackages: Package[] = [
     on_hold_desc: '',
     estimated_delivery_date: '2025-04-21',
     estimated_delivery_time: '13:00:00'
+  },
+  {
+    package_id: 'PKG017',
+    sender: {
+      name: 'International Development Association program',
+      address: '******',
+      contact_number: '******',
+      email: '******'
+    },
+    recipient: {
+      name: 'PATRICK B.',
+      address: '204 Main St  Po Box 133 Idaho city Idaho 83163',
+      contact_number: '307690***',
+      email: 'patrickb******@gmail.com'
+    },
+    tracking_number: 'Fedex/USA/24/0025617',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Cartons',
+      quantity: '2',
+      paymentMode: 'Cash',
+      origin: 'Washington DC, USA',
+      destination: '204 Main st , Idaho city, 83163',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-04-15',
+    package_received_time: '08:12:00',
+    in_transit_date: '2025-04-15',
+    in_transit_time: '09:05:00',
+    out_for_delivery_date: '2025-04-16',
+    out_for_delivery_time: '08:30:00',
+    on_hold_date: '',
+    on_hold_time: '',
+    on_hold_desc: '',
+    estimated_delivery_date: '2025-04-16',
+    estimated_delivery_time: '16:00:00'
   }
 ];
