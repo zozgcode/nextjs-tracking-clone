@@ -771,10 +771,10 @@ export const mockPackages: Package[] = [
     in_transit_time: '09:05:00',
     out_for_delivery_date: '2025-04-16',
     out_for_delivery_time: '08:30:00',
-    on_hold_date: '',
-    on_hold_time: '',
+    on_hold_date: '2025-04-16',
+    on_hold_time: '06:00:00',
     on_hold_desc: '',
-    estimated_delivery_date: '2025-04-16',
-    estimated_delivery_time: '16:00:00'
+    estimated_delivery_date: '',
+    estimated_delivery_time: ''
   }
 ];
