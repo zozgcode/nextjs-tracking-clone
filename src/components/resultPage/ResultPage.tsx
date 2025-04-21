@@ -50,18 +50,25 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
       {
         label: 'Out for Delivery',
         datetime: formatDatetime(packageInfo.out_for_delivery_date, packageInfo.out_for_delivery_time)
-      },
-      {
-        label: 'Delivered',
-        datetime: formatDatetime(packageInfo.estimated_delivery_date, packageInfo.estimated_delivery_time)
       }
     ];
 
+    // Check if we have on_hold data
+    const hasOnHoldData = !!packageInfo.on_hold_date && !!packageInfo.on_hold_time;
+
     // Only add the "On Hold" step if both date and time are available AND the time has been reached
-    if (packageInfo.on_hold_date && packageInfo.on_hold_time && onHoldTimeReached) {
-      stepList.splice(3, 0, {
+    if (hasOnHoldData && onHoldTimeReached) {
+      stepList.push({
         label: 'On Hold',
         datetime: formatDatetime(packageInfo.on_hold_date, packageInfo.on_hold_time)
+      });
+    }
+
+    // Only add the "Delivered" step if there's no on_hold data
+    if (!hasOnHoldData) {
+      stepList.push({
+        label: 'Delivered',
+        datetime: formatDatetime(packageInfo.estimated_delivery_date, packageInfo.estimated_delivery_time)
       });
     }
 
@@ -81,7 +88,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
     }
 
     setCurrentStep(step);
-    
+
     // Check if there's an On Hold status in the package info
     setHasOnHold(!!packageInfo.on_hold_date && !!packageInfo.on_hold_time);
   }, [steps, packageInfo.on_hold_date, packageInfo.on_hold_time, currentTime]);
@@ -115,7 +122,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
     if (step < 0) return 'Processing';
     return steps[step].label;
   };
-  
+
   return (
     <div className="w-full p-[16px] pb-[80px] text-[#333333]">
       <div className="max-w-[1000px] mx-auto">
@@ -130,23 +137,18 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
         <div className="p-4 sm:px-2 rounded bg-[#858585] text-white mb-[30px] mt-[30px] text-center font-semibold">Tracking Number: [{packageInfo.tracking_number}] found.</div>
         <div className="border p-4 md:p-8 rounded-lg">
           <div className="vertical-progress-container">
-          {steps.map((step, index) => (
+            {steps.map((step, index) => (
               <div key={index} className={`step ${index <= currentStep ? 'active' : ''}`}>
                 <div className="circle"></div>
                 <div className="content">
                   <p className="label text-base font-semibold uppercase">{step.label}</p>
-                  {/* Show datetime for all steps except Delivered when On Hold exists and has been reached */}
-                  {step.datetime && !(hasOnHold && onHoldTimeReached && step.label === 'Delivered') && (
+                  {step.datetime && (
                     <p className="text-sm flex flex-col mt-1">
                       {formatDate(step.datetime)}
                       <span className="text-[13px]">{formatTime(step.datetime)}</span>
                     </p>
                   )}
-                  {step.label === 'On Hold' && packageInfo.on_hold_desc && (
-                    <div className="max-w-[300px] mt-2 p-3 text-red-500 text-sm bg-yellow-100 rounded">
-                      {packageInfo.on_hold_desc}
-                    </div>
-                  )}
+                  {step.label === 'On Hold' && packageInfo.on_hold_desc && <div className="max-w-[300px] mt-2 p-3 text-red-500 text-sm bg-yellow-100 rounded">{packageInfo.on_hold_desc}</div>}
                 </div>
               </div>
             ))}
