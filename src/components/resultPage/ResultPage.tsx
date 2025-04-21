@@ -12,6 +12,27 @@ interface ResultPageProps {
 }
 
 export default function ResultPage({ packageInfo }: ResultPageProps) {
+  const [currentTime, setCurrentTime] = useState<Date>(new Date());
+  const [currentStep, setCurrentStep] = useState<number>(-1);
+  const [hasOnHold, setHasOnHold] = useState<boolean>(false);
+  const [onHoldTimeReached, setOnHoldTimeReached] = useState<boolean>(false);
+
+  // Update current time every minute
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000 * 60);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Check if on hold time has been reached
+  useEffect(() => {
+    if (packageInfo.on_hold_date && packageInfo.on_hold_time) {
+      const onHoldDateTime = new Date(`${packageInfo.on_hold_date}T${packageInfo.on_hold_time}`);
+      setOnHoldTimeReached(currentTime >= onHoldDateTime);
+    }
+  }, [currentTime, packageInfo.on_hold_date, packageInfo.on_hold_time]);
+
   const steps = useMemo(() => {
     const formatDatetime = (date: string | undefined, time: string | undefined) => {
       return date && time ? `${date}T${time}` : '';
@@ -36,22 +57,19 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
       }
     ];
 
-    // Only add the "On Hold" step if both date and time are available
-    if (packageInfo.on_hold_date && packageInfo.on_hold_time) {
+    // Only add the "On Hold" step if both date and time are available AND the time has been reached
+    if (packageInfo.on_hold_date && packageInfo.on_hold_time && onHoldTimeReached) {
       stepList.splice(3, 0, {
         label: 'On Hold',
         datetime: formatDatetime(packageInfo.on_hold_date, packageInfo.on_hold_time)
       });
     }
 
-    // Return all steps - we'll show all of them but conditionally hide date/time when empty
     return stepList;
-  }, [packageInfo]);
-
-  const [currentStep, setCurrentStep] = useState<number>(-1);
+  }, [packageInfo, onHoldTimeReached]);
 
   const calculateStep = useCallback(() => {
-    const now = new Date().getTime();
+    const now = currentTime.getTime();
     let step = -1;
 
     for (let i = 0; i < steps.length; i++) {
@@ -63,14 +81,14 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
     }
 
     setCurrentStep(step);
-  }, [steps]);
+    
+    // Check if there's an On Hold status in the package info
+    setHasOnHold(!!packageInfo.on_hold_date && !!packageInfo.on_hold_time);
+  }, [steps, packageInfo.on_hold_date, packageInfo.on_hold_time, currentTime]);
 
   useEffect(() => {
     calculateStep(); // Initial update
-    const interval = setInterval(calculateStep, 1000 * 60); // Update every minute
-
-    return () => clearInterval(interval);
-  }, [calculateStep]);
+  }, [calculateStep, currentTime]);
 
   const formatDate = (datetime: string) => {
     if (!datetime) return '';
@@ -94,20 +112,8 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
   };
 
   const getStatus = (step: number) => {
-    switch (step) {
-      case 0:
-        return 'Processing';
-      case 1:
-        return 'In Transit';
-      case 2:
-        return 'Out for Delivery';
-      case 3:
-        return 'On Hold';
-      case 4:
-        return 'Delivered';
-      default:
-        return 'Processing';
-    }
+    if (step < 0) return 'Processing';
+    return steps[step].label;
   };
   
   return (
@@ -124,12 +130,13 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
         <div className="p-4 sm:px-2 rounded bg-[#858585] text-white mb-[30px] mt-[30px] text-center font-semibold">Tracking Number: [{packageInfo.tracking_number}] found.</div>
         <div className="border p-4 md:p-8 rounded-lg">
           <div className="vertical-progress-container">
-            {steps.map((step, index) => (
+          {steps.map((step, index) => (
               <div key={index} className={`step ${index <= currentStep ? 'active' : ''}`}>
                 <div className="circle"></div>
                 <div className="content">
                   <p className="label text-base font-semibold uppercase">{step.label}</p>
-                  {step.datetime && (
+                  {/* Show datetime for all steps except Delivered when On Hold exists and has been reached */}
+                  {step.datetime && !(hasOnHold && onHoldTimeReached && step.label === 'Delivered') && (
                     <p className="text-sm flex flex-col mt-1">
                       {formatDate(step.datetime)}
                       <span className="text-[13px]">{formatTime(step.datetime)}</span>

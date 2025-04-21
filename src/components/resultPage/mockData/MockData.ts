@@ -725,8 +725,8 @@ export const mockPackages: Package[] = [
     in_transit_time: '09:05:00',
     out_for_delivery_date: '2025-04-21',
     out_for_delivery_time: '10:21:00',
-    on_hold_date: '',
-    on_hold_time: '',
+    on_hold_date: '2025-04-21',
+    on_hold_time: '13:00:00',
     on_hold_desc: '',
     estimated_delivery_date: '2025-04-21',
     estimated_delivery_time: '13:00:00'
@@ -776,5 +776,51 @@ export const mockPackages: Package[] = [
     on_hold_desc: '',
     estimated_delivery_date: '',
     estimated_delivery_time: ''
+  },
+  {
+    package_id: 'PKG018',
+    sender: {
+      name: 'David Alex',
+      address: '******',
+      contact_number: '762-702-5737',
+      email: '******'
+    },
+    recipient: {
+      name: 'Kooi Tan',
+      address: '6/39 Holyrood Street, Hampton Vicoria 3188 Australia ',
+      contact_number: '******',
+      email: '******'
+    },
+    tracking_number: 'Fedex/USA/24/0025618',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Briefcase and Tesla car',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'USA',
+      destination: 'Australia',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-04-23',
+    package_received_time: '08:12:00',
+    in_transit_date: '2025-04-24',
+    in_transit_time: '09:05:00',
+    out_for_delivery_date: '2025-04-25',
+    out_for_delivery_time: '08:30:00',
+    on_hold_date: '2025-04-25',
+    on_hold_time: '14:25:00',
+    on_hold_desc: '',
+    estimated_delivery_date: '2025-04-25',
+    estimated_delivery_time: '14:25:00'
   }
 ];
