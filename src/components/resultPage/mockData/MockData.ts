@@ -822,5 +822,147 @@ export const mockPackages: Package[] = [
     on_hold_desc: '',
     estimated_delivery_date: '2025-04-25',
     estimated_delivery_time: '14:25:00'
+  },
+  {
+    package_id: 'PKG019',
+    sender: {
+      name: 'Trust Wallet',
+      address: '156 2nd street, San Francisco. CA. 94105. USA',
+      contact_number: '***-***-****',
+      email: 'smithhelpt2314@gmail.com'
+    },
+    recipient: {
+      name: 'Sharon D. little',
+      address: '2203 22nd Street North Columbus, MS 39701',
+      contact_number: '******',
+      email: '******'
+    },
+    tracking_number: 'Fedex/USA/24/0025619',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Box of Cash',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'San Francisco. CA. 94105. USA',
+      destination: 'Columbus, MS 39701',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-04-27',
+    package_received_time: '08:00:00',
+    in_transit_date: '2025-04-28',
+    in_transit_time: '09:00:00',
+    out_for_delivery_date: '2025-04-29',
+    out_for_delivery_time: '12:00:00',
+    on_hold_date: '',
+    // 2025-04-30
+    on_hold_time: '',
+    // 11:00:00
+    on_hold_desc: '',
+    estimated_delivery_date: '2025-05-02',
+    estimated_delivery_time: '14:00:00'
+  },
+  {
+    package_id: 'PKG020',
+    sender: {
+      name: 'Roger Smith',
+      address: 'FedEx Office, Des Moines, IA 50319',
+      contact_number: '(253) 243-4762',
+      email: 'smithhelpt2314@gmail.com'
+    },
+    recipient: {
+      name: 'Joan Johnson',
+      address: '327 Green Ave, Carneys Point, NJ 08069.',
+      contact_number: '******',
+      email: '******'
+    },
+    tracking_number: 'Fedex/USA/24/0025620',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Cash Box',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'Penns Grove NJ, United States',
+      destination: 'Carneys Point, NJ 08069',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-04-25',
+    package_received_time: '08:00:00',
+    in_transit_date: '2025-04-27',
+    in_transit_time: '09:00:00',
+    out_for_delivery_date: '2025-04-29',
+    out_for_delivery_time: '07:00:00',
+    on_hold_date: '',
+    // 2025-04-30
+    on_hold_time: '',
+    // 11:00:00
+    on_hold_desc: '',
+    estimated_delivery_date: '2025-04-29',
+    estimated_delivery_time: '17:45:00'
+  },
+  {
+    package_id: 'PKG021',
+    sender: {
+      name: 'Vera Dijkman',
+      address: 'Koninginneweg 167 1075 CN, Amsterdam, North Holland,  Netherlands',
+      contact_number: '+1-727-604-0953',
+      email: 'dijkmansv809@gmail.com'
+    },
+    recipient: {
+      name: 'Donald Walker',
+      address: '5408 West Cold Spring Road Greenfield, Wisconsin.  53220',
+      contact_number: '+1-414-690-3730',
+      email: 'cinniwalk.dw@gmail.com'
+    },
+    tracking_number: 'Fedex/USA/24/0025621',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Red Cross',
+      packages: 'Bag',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'USA',
+      destination: 'Greenfield Wisconsin',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-04-23',
+    package_received_time: '08:00:00',
+    in_transit_date: '2025-05-02',
+    in_transit_time: '09:00:00',
+    out_for_delivery_date: '2025-05-05',
+    out_for_delivery_time: '08:00:00',
+    on_hold_date: '',
+    on_hold_time: '',
+    on_hold_desc: '',
+    estimated_delivery_date: '2025-05-05',
+    estimated_delivery_time: '17:45:00'
   }
 ];
