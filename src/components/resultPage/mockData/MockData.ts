@@ -863,10 +863,8 @@ export const mockPackages: Package[] = [
     in_transit_time: '09:00:00',
     out_for_delivery_date: '2025-04-29',
     out_for_delivery_time: '12:00:00',
-    on_hold_date: '',
-    // 2025-04-30
-    on_hold_time: '',
-    // 11:00:00
+    on_hold_date: '2025-05-01',
+    on_hold_time: '21:30:00',
     on_hold_desc: '',
     estimated_delivery_date: '2025-05-02',
     estimated_delivery_time: '14:00:00'
@@ -929,7 +927,7 @@ export const mockPackages: Package[] = [
     },
     recipient: {
       name: 'Donald Walker',
-      address: '5408 West Cold Spring Road Greenfield, Wisconsin.  53220',
+      address: '5408 West Cold Spring Road Greenfield, Wisconsin. 53220',
       contact_number: '+1-414-690-3730',
       email: 'cinniwalk.dw@gmail.com'
     },
@@ -959,10 +957,103 @@ export const mockPackages: Package[] = [
     in_transit_time: '09:00:00',
     out_for_delivery_date: '2025-05-05',
     out_for_delivery_time: '08:00:00',
-    on_hold_date: '',
-    on_hold_time: '',
+    on_hold_date: '2025-05-03',
+    on_hold_time: '09:00:00',
     on_hold_desc: '',
     estimated_delivery_date: '2025-05-05',
     estimated_delivery_time: '17:45:00'
+  },
+  {
+    package_id: 'PKG022',
+    sender: {
+      name: 'Amanda April Johnson',
+      address: '306 Iredell County, Statesville, North Carolina 28625',
+      contact_number: '+1-317-352-10763',
+      email: 'amandaj198007@gmail.com'
+    },
+    recipient: {
+      name: 'John C Fletcher',
+      address: ' 1631 Colt Dr, Henderson, Nevada, USA 89002',
+      contact_number: '+1-725-303-2749',
+      email: 'sg198007@gmail.com'
+    },
+    tracking_number: 'Fedex/USA/24/0025622',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Cash Box',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'North Carolina, USA',
+      destination: 'Nevada, USA',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-05-01',
+    package_received_time: '08:00:00',
+    in_transit_date: '2025-05-05',
+    in_transit_time: '09:00:00',
+    out_for_delivery_date: '2025-05-10',
+    out_for_delivery_time: '08:00:00',
+    on_hold_date: '',
+    on_hold_time: '',
+    on_hold_desc: '',
+    estimated_delivery_date: '2025-05-10',
+    estimated_delivery_time: '17:45:00'
+  },
+  {
+    package_id: 'PKG023',
+    sender: {
+      name: 'DEBORAH BULL',
+      address: '546 NW Skyline Dr, Toledo OR 97391',
+      contact_number: '509769****',
+      email: 'debor****06@gmail.com'
+    },
+    recipient: {
+      name: ' Bonnie Coleman Beth',
+      address: '8327 W Tidwell Rd Apt 1702 Houston, TX 77040-5572',
+      contact_number: '707797****',
+      email: 'Bonnie.****an@ymail.com '
+    },
+    tracking_number: 'Fedex/USA/24/0025623',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Briefcase',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'Toledo, Ohio USA',
+      destination: 'Houston, TX USA',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-05-08',
+    package_received_time: '04:00:00',
+    in_transit_date: '2025-05-08',
+    in_transit_time: '07:00:00',
+    out_for_delivery_date: '2025-05-08',
+    out_for_delivery_time: '09:30:00',
+    on_hold_date: '2025-05-08',
+    on_hold_time: '20:00:00',
+    on_hold_desc: '',
+    estimated_delivery_date: '2025-05-08',
+    estimated_delivery_time: '23:00:00',
+    time_zone: 'America/Chicago'
   }
 ];

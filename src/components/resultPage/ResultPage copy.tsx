@@ -38,7 +38,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
       return date && time ? `${date}T${time}` : '';
     };
   
-    const rawSteps = [
+    const stepList = [
       {
         label: 'Package Received By FEDEX',
         datetime: formatDatetime(packageInfo.package_received_date, packageInfo.package_received_time)
@@ -46,88 +46,69 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
       {
         label: 'In Transit',
         datetime: formatDatetime(packageInfo.in_transit_date, packageInfo.in_transit_time)
-      },
-      {
-        label: 'Out for Delivery',
-        datetime: formatDatetime(packageInfo.out_for_delivery_date, packageInfo.out_for_delivery_time)
-      },
-      {
-        label: 'Delivered',
-        datetime: formatDatetime(packageInfo.estimated_delivery_date, packageInfo.estimated_delivery_time)
       }
     ];
   
-    const stepsWithDatetime = rawSteps.filter(step => step.datetime);
-  
-    // Include "On Hold" if applicable and time has been reached
+    // Check if we have on_hold data
     const hasOnHoldData = !!packageInfo.on_hold_date && !!packageInfo.on_hold_time;
-    const onHoldDatetime = hasOnHoldData && onHoldTimeReached
-      ? formatDatetime(packageInfo.on_hold_date, packageInfo.on_hold_time)
-      : null;
   
-    if (onHoldDatetime) {
-      stepsWithDatetime.push({
+    // Only add the "On Hold" step if both date and time are available AND the time has been reached
+    if (hasOnHoldData && onHoldTimeReached) {
+      stepList.push({
         label: 'On Hold',
-        datetime: onHoldDatetime
+        datetime: formatDatetime(packageInfo.on_hold_date, packageInfo.on_hold_time)
+      });
+  
+      // If On Hold is reached, hide "Out for Delivery"
+      return stepList;
+    }
+  
+    // Only add the "Out for Delivery" step if On Hold was not reached
+    stepList.push({
+      label: 'Out for Delivery',
+      datetime: formatDatetime(packageInfo.out_for_delivery_date, packageInfo.out_for_delivery_time)
+    });
+  
+    // Add "Delivered" step if there's no on_hold data
+    if (!hasOnHoldData) {
+      stepList.push({
+        label: 'Delivered',
+        datetime: formatDatetime(packageInfo.estimated_delivery_date, packageInfo.estimated_delivery_time)
       });
     }
   
-    // Sort all steps by datetime ascending
-    return stepsWithDatetime.sort((a, b) => {
-      const aTime = new Date(a.datetime!).getTime();
-      const bTime = new Date(b.datetime!).getTime();
-      return aTime - bTime;
-    });
+    return stepList;
   }, [packageInfo, onHoldTimeReached]);
   
 
   const calculateStep = useCallback(() => {
     const now = currentTime.getTime();
     let step = -1;
-  
-    const onHoldIndex = steps.findIndex(s => s.label === 'On Hold');
-    const onHoldTime = onHoldIndex !== -1 && steps[onHoldIndex].datetime
-      ? new Date(steps[onHoldIndex].datetime!).getTime()
-      : null;
-  
+
     for (let i = 0; i < steps.length; i++) {
-      const stepTime = steps[i].datetime ? new Date(steps[i].datetime!).getTime() : null;
-  
-      if (stepTime && now >= stepTime) {
-        // Check if there's a future step and if On Hold happened before that
-        if (
-          onHoldTime &&
-          onHoldTime < stepTime &&     // On Hold is earlier
-          now >= onHoldTime &&         // On Hold has occurred
-          i > onHoldIndex              // This step is after On Hold
-        ) {
-          break; // Stop before progressing past "On Hold"
-        }
-  
-        step = i; // Mark current step as active
+      if (steps[i].datetime && now >= new Date(steps[i].datetime).getTime()) {
+        step = i;
       } else {
         break;
       }
     }
-  
+
     setCurrentStep(step);
-  
+
+    // Check if there's an On Hold status in the package info
     setHasOnHold(!!packageInfo.on_hold_date && !!packageInfo.on_hold_time);
-  }, [steps, packageInfo.on_hold_date, packageInfo.on_hold_time, currentTime]);  
+  }, [steps, packageInfo.on_hold_date, packageInfo.on_hold_time, currentTime]);
 
   useEffect(() => {
     calculateStep(); // Initial update
   }, [calculateStep, currentTime]);
-
-  const timeZone = packageInfo.time_zone || 'UTC';
 
   const formatDate = (datetime: string) => {
     if (!datetime) return '';
     const options: Intl.DateTimeFormatOptions = {
       year: 'numeric',
       month: 'long',
-      day: 'numeric',
-      timeZone
+      day: 'numeric'
     };
     return new Date(datetime).toLocaleDateString(undefined, options);
   };
@@ -138,8 +119,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
-      hour12: true,
-      timeZone
+      hour12: true
     };
     return new Date(datetime).toLocaleTimeString(undefined, options);
   };
@@ -301,16 +281,28 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
               </div>
               <div className="bg-gray-100 flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Estimated Delivery Date</div>
-                <div className="w-full p-3 py-2">  {formatDate(`${packageInfo.estimated_delivery_date}T${packageInfo.estimated_delivery_time}`)}</div>
+                <div className="w-full p-3 py-2">{formatDate(packageInfo.estimated_delivery_date)}</div>
               </div>
               <div className="bg-[#858585] text-white flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Estimated Delivery Time</div>
                 <div className="w-full p-3 py-2">{formatTime(`${packageInfo.estimated_delivery_date}T${packageInfo.estimated_delivery_time}`)}</div>
               </div>
+              {/* <div className="bg-gray-100 flex items-center justify-between">
+                <div className="w-full p-3 py-2 border-r">Pickup Date</div>
+                <div className="w-full p-3 py-2">{formatDate(packageInfo.pickup_date ?? '')}</div>
+              </div>
+              <div className="bg-[#858585] text-white flex items-center justify-between">
+                <div className="w-full p-3 py-2 border-r">Pickup Time</div>
+                <div className="w-full p-3 py-2">{formatTime(`${packageInfo.pickup_date}T${packageInfo.pickup_time}`)}</div>
+              </div> */}
               <div className=" bg-gray-100 flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Mode</div>
                 <div className="w-full p-3 py-2">{packageInfo.package_details.mode}</div>
               </div>
+              {/* <div className="bg-[#858585] text-white flex items-center justify-between">
+                <div className="w-full p-3 py-2 border-r">Status</div>
+                <div className="w-full p-3 py-2">{packageInfo.package_details.status}</div>
+              </div> */}
               <div className="bg-[#858585] text-white flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Comment</div>
                 <div className="w-full p-3 py-2">{packageInfo.package_details.comment}</div>

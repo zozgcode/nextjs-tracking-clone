@@ -36,8 +36,8 @@ export interface Package {
   package_received_time: string;
   in_transit_date: string;
   in_transit_time: string;
-  out_for_delivery_date: string;
-  out_for_delivery_time: string;
+  out_for_delivery_date?: string;
+  out_for_delivery_time?: string;
   on_hold_date?: string;
   on_hold_time?: string;
   on_hold_desc?: string;
@@ -45,4 +45,5 @@ export interface Package {
   estimated_delivery_time: string;
   pickup_date?: string;
   pickup_time?: string;
+  time_zone?: string;
 }
