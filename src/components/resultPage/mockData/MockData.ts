@@ -1055,5 +1055,52 @@ export const mockPackages: Package[] = [
     estimated_delivery_date: '2025-05-08',
     estimated_delivery_time: '23:00:00',
     time_zone: 'America/Chicago'
+  },
+  {
+    package_id: 'PKG024',
+    sender: {
+      name: 'Seven Gallery',
+      address: '2200 NW 2nd Ave, 33127 Miami FL',
+      contact_number: '***-***-****',
+      email: '******'
+    },
+    recipient: {
+      name: 'Elena Cannon',
+      address: '1 Central Park west, Apt 38B, New York, NY 10023',
+      contact_number: '***-***-****',
+      email: '******'
+    },
+    tracking_number: 'Fedex/USA/24/0025624',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Gift Item',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'FL, USA',
+      destination: 'NY, USA',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-05-21',
+    package_received_time: '04:00:00',
+    in_transit_date: '2025-05-21',
+    in_transit_time: '07:00:00',
+    out_for_delivery_date: '2025-05-23',
+    out_for_delivery_time: '01:30:00',
+    on_hold_date: '2025-05-23',
+    on_hold_time: '20:00:00',
+    on_hold_desc: '',
+    estimated_delivery_date: '2025-05-23',
+    estimated_delivery_time: '22:00:00',
+    time_zone: 'America/Chicago'
   }
 ];
