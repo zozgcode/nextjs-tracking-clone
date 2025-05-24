@@ -1,0 +1,17 @@
+if Package Received By FEDEX date is May 23, 2025 and Delivered May 30, 2025 what date will be on In Transit and Out for Delivery. package from Connecticut, USA to NY, USA
+
+Package Received By FEDEX
+May 23, 2025
+01:35:00 PM
+
+In Transit
+May 24, 2025
+01:35:00 PM
+
+Out for Delivery
+May 25, 2025
+01:35:00 PM
+
+Delivered
+May 30, 2025
+04:35:00 PM

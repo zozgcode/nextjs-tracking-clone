@@ -37,7 +37,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
     const formatDatetime = (date: string | undefined, time: string | undefined) => {
       return date && time ? `${date}T${time}` : '';
     };
-  
+
     const rawSteps = [
       {
         label: 'Package Received By FEDEX',
@@ -56,22 +56,20 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
         datetime: formatDatetime(packageInfo.estimated_delivery_date, packageInfo.estimated_delivery_time)
       }
     ];
-  
+
     const stepsWithDatetime = rawSteps.filter(step => step.datetime);
-  
+
     // Include "On Hold" if applicable and time has been reached
     const hasOnHoldData = !!packageInfo.on_hold_date && !!packageInfo.on_hold_time;
-    const onHoldDatetime = hasOnHoldData && onHoldTimeReached
-      ? formatDatetime(packageInfo.on_hold_date, packageInfo.on_hold_time)
-      : null;
-  
+    const onHoldDatetime = hasOnHoldData && onHoldTimeReached ? formatDatetime(packageInfo.on_hold_date, packageInfo.on_hold_time) : null;
+
     if (onHoldDatetime) {
       stepsWithDatetime.push({
         label: 'On Hold',
         datetime: onHoldDatetime
       });
     }
-  
+
     // Sort all steps by datetime ascending
     return stepsWithDatetime.sort((a, b) => {
       const aTime = new Date(a.datetime!).getTime();
@@ -79,41 +77,38 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
       return aTime - bTime;
     });
   }, [packageInfo, onHoldTimeReached]);
-  
 
   const calculateStep = useCallback(() => {
     const now = currentTime.getTime();
     let step = -1;
-  
+
     const onHoldIndex = steps.findIndex(s => s.label === 'On Hold');
-    const onHoldTime = onHoldIndex !== -1 && steps[onHoldIndex].datetime
-      ? new Date(steps[onHoldIndex].datetime!).getTime()
-      : null;
-  
+    const onHoldTime = onHoldIndex !== -1 && steps[onHoldIndex].datetime ? new Date(steps[onHoldIndex].datetime!).getTime() : null;
+
     for (let i = 0; i < steps.length; i++) {
       const stepTime = steps[i].datetime ? new Date(steps[i].datetime!).getTime() : null;
-  
+
       if (stepTime && now >= stepTime) {
         // Check if there's a future step and if On Hold happened before that
         if (
           onHoldTime &&
-          onHoldTime < stepTime &&     // On Hold is earlier
-          now >= onHoldTime &&         // On Hold has occurred
-          i > onHoldIndex              // This step is after On Hold
+          onHoldTime < stepTime && // On Hold is earlier
+          now >= onHoldTime && // On Hold has occurred
+          i > onHoldIndex // This step is after On Hold
         ) {
           break; // Stop before progressing past "On Hold"
         }
-  
+
         step = i; // Mark current step as active
       } else {
         break;
       }
     }
-  
+
     setCurrentStep(step);
-  
+
     setHasOnHold(!!packageInfo.on_hold_date && !!packageInfo.on_hold_time);
-  }, [steps, packageInfo.on_hold_date, packageInfo.on_hold_time, currentTime]);  
+  }, [steps, packageInfo.on_hold_date, packageInfo.on_hold_time, currentTime]);
 
   useEffect(() => {
     calculateStep(); // Initial update
@@ -301,11 +296,15 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
               </div>
               <div className="bg-gray-100 flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Estimated Delivery Date</div>
-                <div className="w-full p-3 py-2">  {formatDate(`${packageInfo.estimated_delivery_date}T${packageInfo.estimated_delivery_time}`)}</div>
+                <div className="w-full p-3 py-2">
+                  {packageInfo.estimated_delivery_date && packageInfo.estimated_delivery_time ? formatDate(`${packageInfo.estimated_delivery_date}T${packageInfo.estimated_delivery_time}`) : ''}
+                </div>
               </div>
               <div className="bg-[#858585] text-white flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Estimated Delivery Time</div>
-                <div className="w-full p-3 py-2">{formatTime(`${packageInfo.estimated_delivery_date}T${packageInfo.estimated_delivery_time}`)}</div>
+                <div className="w-full p-3 py-2">
+                  {packageInfo.estimated_delivery_date && packageInfo.estimated_delivery_time ? formatTime(`${packageInfo.estimated_delivery_date}T${packageInfo.estimated_delivery_time}`) : ''}
+                </div>
               </div>
               <div className=" bg-gray-100 flex items-center justify-between">
                 <div className="w-full p-3 py-2 border-r">Mode</div>

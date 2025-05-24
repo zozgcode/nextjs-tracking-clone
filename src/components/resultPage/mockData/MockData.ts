@@ -1102,5 +1102,52 @@ export const mockPackages: Package[] = [
     estimated_delivery_date: '2025-05-23',
     estimated_delivery_time: '22:00:00',
     time_zone: 'America/Chicago'
+  },
+  {
+    package_id: 'PKG025',
+    sender: {
+      name: 'Micheal Anderson',
+      address: '199 Old Maids Ln Glastonbury, Connecticut, USA 06073',
+      contact_number: '***-***-****',
+      email: '******'
+    },
+    recipient: {
+      name: 'Daisy Baptista',
+      address: '218 broad St Apt 8L Staten Island NY 10304',
+      contact_number: '***-***-****',
+      email: '******'
+    },
+    tracking_number: 'Fedex/USA/24/0025625',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Briefcase',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'Connecticut, USA',
+      destination: 'NY, USA',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-05-23',
+    package_received_time: '19:35:00',
+    in_transit_date: '2025-05-26',
+    in_transit_time: '21:00:00',
+    out_for_delivery_date: '2025-05-29',
+    out_for_delivery_time: '14:00:00',
+    on_hold_date: '2025-05-30',
+    on_hold_time: '22:00:00',
+    on_hold_desc: '',
+    estimated_delivery_date: '2025-05-30',
+    estimated_delivery_time: '22:35:00',
+    time_zone: 'America/Chicago'
   }
 ];
