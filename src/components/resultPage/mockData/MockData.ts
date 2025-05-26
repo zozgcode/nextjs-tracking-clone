@@ -1126,7 +1126,7 @@ export const mockPackages: Package[] = [
         height: 15
       },
       courier: 'Fedex',
-      packages: 'Briefcase',
+      packages: 'Briefcase #8910',
       quantity: '1',
       paymentMode: 'Cash',
       origin: 'Connecticut, USA',
