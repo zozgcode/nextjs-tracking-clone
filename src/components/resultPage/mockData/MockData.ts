@@ -1149,5 +1149,52 @@ export const mockPackages: Package[] = [
     estimated_delivery_date: '2025-05-30',
     estimated_delivery_time: '22:35:00',
     time_zone: 'America/Chicago'
+  },
+  {
+    package_id: 'PKG026',
+    sender: {
+      name: 'Jeffrey Thomas hanks',
+      address: '******',
+      contact_number: '***-***-****',
+      email: 'thmhanksjeff01003@gmail.com'
+    },
+    recipient: {
+      name: 'Harriette schutsch',
+      address: '4348 ridgedale avenue Las Vegas NV 89121',
+      contact_number: '***-***-****',
+      email: '******'
+    },
+    tracking_number: 'Fedex/USA/24/0025626',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Envelope',
+      quantity: '2',
+      paymentMode: 'Credit Card',
+      origin: 'England, UK',
+      destination: 'Las Vegas, NV, USA',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'International Shipping',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-05-26',
+    package_received_time: '19:35:00',
+    in_transit_date: '2025-05-27',
+    in_transit_time: '21:00:00',
+    out_for_delivery_date: '2025-06-03',
+    out_for_delivery_time: '14:00:00',
+    on_hold_date: '',
+    on_hold_time: '',
+    on_hold_desc: '',
+    estimated_delivery_date: '2025-06-03',
+    estimated_delivery_time: '23:35:00',
+    time_zone: 'America/Chicago'
   }
 ];
