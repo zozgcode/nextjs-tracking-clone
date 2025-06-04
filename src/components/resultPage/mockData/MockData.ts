@@ -1192,7 +1192,7 @@ export const mockPackages: Package[] = [
     out_for_delivery_time: '14:00:00',
     on_hold_date: '2025-06-30',
     on_hold_time: '16:43:00',
-    on_hold_desc: '',
+    on_hold_desc: 'On hold in the fedex facility center, Las Vegas, Nevada',
     estimated_delivery_date: '2025-07-01',
     estimated_delivery_time: '23:35:00',
     time_zone: 'America/Chicago'
