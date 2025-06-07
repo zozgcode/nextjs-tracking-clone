@@ -1196,5 +1196,52 @@ export const mockPackages: Package[] = [
     estimated_delivery_date: '2025-06-30',
     estimated_delivery_time: '23:35:00',
     time_zone: 'America/Chicago'
+  },
+  {
+    package_id: 'PKG027',
+    sender: {
+      name: 'Ronald rahne',
+      address: '1500 Marilla St, Dallas, TX 75201',
+      contact_number: '***-***-****',
+      email: '******'
+    },
+    recipient: {
+      name: 'Kay kennel Tarango',
+      address: '2270 S 1100 W G 103 West Haven UT 84401, US',
+      contact_number: '***-***-****',
+      email: '******'
+    },
+    tracking_number: '673456789027',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Box',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'Dallas, TX, USA',
+      destination: 'West Haven, UT, USA',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-06-04',
+    package_received_time: '10:00:00',
+    in_transit_date: '2025-06-05',
+    in_transit_time: '07:30:00',
+    out_for_delivery_date: '2025-06-07',
+    out_for_delivery_time: '04:00:00',
+    on_hold_date: '',
+    on_hold_time: '',
+    on_hold_desc: '',
+    estimated_delivery_date: '2025-06-08',
+    estimated_delivery_time: '00:08:00',
+    time_zone: 'America/Chicago'
   }
 ];

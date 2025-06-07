@@ -1,7 +1,6 @@
-if Package Received By FEDEX date is May 26, 2025 and Delivered date is June 3, 2025 what date will be on In Transit and Out for Delivery. package from England, UK to Las Vegas, NV, USA
+if Package Received By FEDEX date is May 26, 2025 and Delivered date is June 7, 2025 what date will be on In Transit and Out for Delivery. package from England, UK to Las Vegas, NV, USA
 
 Package Received By FEDEX in England, UK 
-
 
 May 26, 2025
 01:35:00 PM
@@ -21,5 +20,5 @@ time
 
 
 Delivered to Las Vegas, NV, USA
-June 3, 2025
-04:35:00 PM
+June 7, 2025
+06:08:00 AM
