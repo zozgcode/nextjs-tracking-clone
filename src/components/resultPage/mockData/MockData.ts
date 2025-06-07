@@ -1243,5 +1243,52 @@ export const mockPackages: Package[] = [
     estimated_delivery_date: '2025-06-10',
     estimated_delivery_time: '01:30:00',
     time_zone: 'America/Chicago'
+  },
+  {
+    package_id: 'PKG028',
+    sender: {
+      name: 'WILSON RASFORD',
+      address: '',
+      contact_number: '***-***-****',
+      email: 'officialwilsonrasford@gmail.com'
+    },
+    recipient: {
+      name: 'DAISY LYNNE GREGORY ',
+      address: '1433 Franklin St Enumclaw, Washington 98022',
+      contact_number: '***-***-****',
+      email: '******'
+    },
+    tracking_number: '673456789028',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'White House Faith Based And Neighborhood Partnerships Winning Money',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'Arkansas, USA',
+      destination: 'Washington, USA',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-06-07',
+    package_received_time: '14:00:00',
+    in_transit_date: '2025-06-07',
+    in_transit_time: '20:00:00',
+    out_for_delivery_date: '2025-06-07',
+    out_for_delivery_time: '21:30:00',
+    on_hold_date: '2025-06-07',
+    on_hold_time: '23:30:00',
+    on_hold_desc: '',
+    estimated_delivery_date: '2025-06-08',
+    estimated_delivery_time: '01:30:00',
+    time_zone: 'America/Chicago'
   }
 ];
