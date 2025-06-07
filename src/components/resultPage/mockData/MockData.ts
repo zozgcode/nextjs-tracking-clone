@@ -1240,8 +1240,8 @@ export const mockPackages: Package[] = [
     on_hold_date: '',
     on_hold_time: '',
     on_hold_desc: '',
-    estimated_delivery_date: '2025-06-08',
-    estimated_delivery_time: '00:08:00',
+    estimated_delivery_date: '2025-06-10',
+    estimated_delivery_time: '01:30:00',
     time_zone: 'America/Chicago'
   }
 ];
