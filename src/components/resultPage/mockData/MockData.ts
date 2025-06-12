@@ -1290,5 +1290,52 @@ export const mockPackages: Package[] = [
     estimated_delivery_date: '2025-06-08',
     estimated_delivery_time: '00:30:00',
     time_zone: 'America/Chicago'
+  },
+  {
+    package_id: 'PKG029',
+    sender: {
+      name: 'Military Transit System',
+      address: 'Fort liberty North Carolina',
+      contact_number: '+1-909-901-3322',
+      email: 'ftlusa25l021@gmail.com'
+    },
+    recipient: {
+      name: 'KiJan Keita Coryaba',
+      address: '1155 Woodsedge Road Dover Delaware 19904',
+      contact_number: '302-415-5056',
+      email: 'kijancoryaba1@gmail.com'
+    },
+    tracking_number: '673456789029',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Briefcase',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'North Carolina, USA',
+      destination: 'Delaware, USA',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-06-12',
+    package_received_time: '14:00:00',
+    in_transit_date: '2025-06-12',
+    in_transit_time: '20:00:00',
+    out_for_delivery_date: '2025-07-28',
+    out_for_delivery_time: '15:00:00',
+    on_hold_date: '2025-07-28',
+    on_hold_time: '23:30:00',
+    on_hold_desc: '',
+    estimated_delivery_date: '2025-07-29',
+    estimated_delivery_time: '00:30:00',
+    time_zone: 'America/Chicago'
   }
 ];
