@@ -1211,7 +1211,7 @@ export const mockPackages: Package[] = [
       contact_number: '***-***-****',
       email: '******'
     },
-    tracking_number: '673456789027',
+    tracking_number: 'Fedex/USA/25/0025627',
     package_details: {
       weight_kg: 10,
       dimensions_cm: {
@@ -1240,7 +1240,7 @@ export const mockPackages: Package[] = [
     on_hold_date: '',
     on_hold_time: '',
     on_hold_desc: '',
-    estimated_delivery_date: '2025-06-10',
+    estimated_delivery_date: '2025-06-27',
     estimated_delivery_time: '01:30:00',
     time_zone: 'America/Chicago'
   },

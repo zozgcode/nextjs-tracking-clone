@@ -38,7 +38,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
       return date && time ? `${date}T${time}` : '';
     };
 
-    const rawSteps = [
+    let rawSteps = [
       {
         label: 'Package Received By FEDEX',
         datetime: formatDatetime(packageInfo.package_received_date, packageInfo.package_received_time)
@@ -50,12 +50,18 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
       {
         label: 'Out for Delivery',
         datetime: formatDatetime(packageInfo.out_for_delivery_date, packageInfo.out_for_delivery_time)
-      },
-      {
-        label: 'Delivered',
-        datetime: formatDatetime(packageInfo.estimated_delivery_date, packageInfo.estimated_delivery_time)
       }
     ];
+
+    // Conditionally add 'Delivered' if not on hold
+    const isOnHoldActive = !!packageInfo.on_hold_date && !!packageInfo.on_hold_time && onHoldTimeReached;
+
+    if (!isOnHoldActive) {
+      rawSteps.push({
+        label: 'Delivered',
+        datetime: formatDatetime(packageInfo.estimated_delivery_date, packageInfo.estimated_delivery_time)
+      });
+    }
 
     const stepsWithDatetime = rawSteps.filter(step => step.datetime);
 
