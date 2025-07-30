@@ -1343,13 +1343,13 @@ export const mockPackages: Package[] = [
     sender: {
       name: 'Fedex',
       address: '6900 Presidents Dr, Orlando, FL 32809',
-      contact_number: '+1-310-420-9869',
+      contact_number: '+1-541-250-****',
       email: '*******'
     },
     recipient: {
       name: 'Ursina Naef',
       address: '4606 Rollando Drive, Rolling Hills Estates, CA 90274',
-      contact_number: '*******',
+      contact_number: '+1-310-420-****',
       email: '*******'
     },
     tracking_number: 'Fedex/USA/25/0025630',
