@@ -1349,7 +1349,7 @@ export const mockPackages: Package[] = [
     recipient: {
       name: 'Ursina Naef',
       address: '4606 Rollando Drive, Rolling Hills Estates, CA 90274',
-      contact_number: '+1-541-250-0629',
+      contact_number: '*******',
       email: '*******'
     },
     tracking_number: 'Fedex/USA/25/0025630',
@@ -1375,7 +1375,7 @@ export const mockPackages: Package[] = [
     package_received_date: '2025-07-29',
     package_received_time: '14:00:00',
     in_transit_date: '2025-07-30',
-    in_transit_time: '16:00:00',
+    in_transit_time: '11:30:00',
     out_for_delivery_date: '2025-07-31',
     out_for_delivery_time: '15:00:00',
     on_hold_date: '',
