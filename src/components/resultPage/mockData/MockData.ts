@@ -1337,5 +1337,52 @@ export const mockPackages: Package[] = [
     estimated_delivery_date: '2025-07-29',
     estimated_delivery_time: '00:30:00',
     time_zone: 'America/Chicago'
+  },
+  {
+    package_id: 'PKG030',
+    sender: {
+      name: 'Fedex',
+      address: '6900 Presidents Dr, Orlando, FL 32809',
+      contact_number: '*******',
+      email: '*******'
+    },
+    recipient: {
+      name: 'Ursina Naef',
+      address: '4606 Rollando Drive, Rolling Hills Estates, CA 90274',
+      contact_number: '+1-541-250-0629',
+      email: '*******'
+    },
+    tracking_number: 'Fedex/USA/25/0025630',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Treasure Box',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'Florida, USA',
+      destination: 'California, USA',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-07-29',
+    package_received_time: '14:00:00',
+    in_transit_date: '2025-07-30',
+    in_transit_time: '16:00:00',
+    out_for_delivery_date: '2025-07-31',
+    out_for_delivery_time: '15:00:00',
+    on_hold_date: '',
+    on_hold_time: '',
+    on_hold_desc: '',
+    estimated_delivery_date: '2025-08-02',
+    estimated_delivery_time: '02:30:00',
+    time_zone: 'America/Chicago'
   }
 ];
