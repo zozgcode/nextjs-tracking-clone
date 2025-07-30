@@ -159,7 +159,7 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
             <span className="text-[#ff6600]">Ex</span>
             <span className="text-sm align-super relative top-[2px] text-red-700">®</span>
           </Link>
-          <Link href="/">Go Home</Link>
+          <Link href="/">Close</Link>
         </div>
         <div className="p-4 sm:px-2 rounded bg-[#858585] text-white mb-[30px] mt-[30px] text-center font-semibold">Tracking Number: [{packageInfo.tracking_number}] found.</div>
         <div className="border p-4 md:p-8 rounded-lg">

@@ -1343,7 +1343,7 @@ export const mockPackages: Package[] = [
     sender: {
       name: 'Fedex',
       address: '6900 Presidents Dr, Orlando, FL 32809',
-      contact_number: '*******',
+      contact_number: '+1-310-420-9869',
       email: '*******'
     },
     recipient: {
@@ -1381,7 +1381,7 @@ export const mockPackages: Package[] = [
     on_hold_date: '',
     on_hold_time: '',
     on_hold_desc: '',
-    estimated_delivery_date: '2025-08-02',
+    estimated_delivery_date: '2025-08-03',
     estimated_delivery_time: '02:30:00',
     time_zone: 'America/Chicago'
   }
