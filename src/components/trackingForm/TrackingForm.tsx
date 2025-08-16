@@ -32,7 +32,7 @@ export default function TrackingForm() {
           type="text"
           id="trackingNumber"
           className="w-full rounded p-[12px] pb-[20px] pt-[20px]"
-          placeholder="TRACKING NUMBER"
+          placeholder="Track your package by entering your tracking number"
           value={trackingNumber}
           onChange={(e) => setTrackingNumber(e.target.value)}
           required

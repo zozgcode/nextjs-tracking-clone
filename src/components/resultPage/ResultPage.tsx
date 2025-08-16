@@ -209,11 +209,11 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="bg-white text-[#333333] border">
-                      <td className="px-4 py-2 w-[200px]">{packageInfo.sender.name}</td>
-                      <td className="px-4 py-2 w-[200px]">{packageInfo.sender.contact_number}</td>
-                      <td className="px-4 py-2 w-[300px]">{packageInfo.sender.address}</td>
-                      <td className="px-4 py-2 w-[200px]">{packageInfo.sender.email}</td>
+                    <tr className="bg-white text-nowrap text-[#333333] border">
+                      <td className="px-4 py-4 w-[200px]">{packageInfo.sender.name}</td>
+                      <td className="px-4 py-4 w-[200px]">{packageInfo.sender.contact_number}</td>
+                      <td className="px-4 py-4 w-[300px]">{packageInfo.sender.address}</td>
+                      <td className="px-4 py-4 w-[200px]">{packageInfo.sender.email}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -248,11 +248,11 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="bg-white text-[#333333] border">
-                      <td className="px-4 py-2 w-[200px]">{packageInfo.recipient.name}</td>
-                      <td className="px-4 py-2 w-[200px]">{packageInfo.recipient.contact_number}</td>
-                      <td className="px-4 py-2 w-[300px]">{packageInfo.recipient.address}</td>
-                      <td className="px-4 py-2 w-[200px]">{packageInfo.recipient.email}</td>
+                    <tr className="bg-white text-nowrap text-[#333333] border">
+                      <td className="px-4 py-4 w-[200px]">{packageInfo.recipient.name}</td>
+                      <td className="px-4 py-4 w-[200px]">{packageInfo.recipient.contact_number}</td>
+                      <td className="px-4 py-4 w-[300px]">{packageInfo.recipient.address}</td>
+                      <td className="px-4 py-4 w-[200px]">{packageInfo.recipient.email}</td>
                     </tr>
                   </tbody>
                 </table>

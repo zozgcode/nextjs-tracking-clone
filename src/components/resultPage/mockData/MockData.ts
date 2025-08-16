@@ -58,7 +58,7 @@ export const mockPackages: Package[] = [
       contact_number: '505****',
       email: '*****'
     },
-    tracking_number: 'Fedex/USA/24/0025631',
+    tracking_number: 'Fedex/USA/24/00256302',
     package_details: {
       weight_kg: 10,
       dimensions_cm: {
@@ -1383,6 +1383,53 @@ export const mockPackages: Package[] = [
     on_hold_desc: '',
     estimated_delivery_date: '2025-08-03',
     estimated_delivery_time: '02:30:00',
+    time_zone: 'America/Chicago'
+  },
+  {
+    package_id: 'PKG031',
+    sender: {
+      name: 'Jessica Kellogg',
+      address: '11207 BROADWATER BRIDGE ROSEBORO, NC 28382-8542',
+      contact_number: '******',
+      email: '******'
+    },
+    recipient: {
+      name: 'Samuel Denduaw',
+      address: '6781 hwy 42 Tenmile OREGON 974811',
+      contact_number: '******',
+      email: '******'
+    },
+    tracking_number: 'Fedex/USA/25/0025631',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Box',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'Roseboro, NC',
+      destination: 'Tenmile, OR',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-08-16',
+    package_received_time: '15:00:00',
+    in_transit_date: '2025-08-18',
+    in_transit_time: '14:30:00',
+    out_for_delivery_date: '2025-08-21',
+    out_for_delivery_time: '15:00:00',
+    on_hold_date: '',
+    on_hold_time: '',
+    on_hold_desc: '',
+    estimated_delivery_date: '2025-08-21',
+    estimated_delivery_time: '23:30:00',
     time_zone: 'America/Chicago'
   }
 ];
