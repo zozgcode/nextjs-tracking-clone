@@ -39,7 +39,7 @@
 .step.active .circle::after {
   content: "✔";
   font-size: 20px;
-  color: #fff;
+  color: #ffffff;
   width: 45px;
   height: 45px;
   left: -2px;
