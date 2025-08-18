@@ -166,9 +166,9 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
           <div className="vertical-progress-container">
             {steps.map((step, index) => (
               <div key={index} className={`step ${index <= currentStep ? 'active' : ''}`}>
-                <div className="circle"></div>
+                <div className={`circle ${step.label === 'On Hold' ? "onHold" : ""}`}></div>
                 <div className="content">
-                  <p className="label text-base font-semibold uppercase">{step.label}</p>
+                  <p className={`label text-base font-semibold uppercase ${step.label === 'On Hold' ? "text-red-600" : ""}`}>{step.label}</p>
                   {step.datetime && (
                     <p className="text-sm flex flex-col mt-1">
                       {formatDate(step.datetime)}

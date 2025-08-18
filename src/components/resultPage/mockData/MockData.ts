@@ -1431,5 +1431,52 @@ export const mockPackages: Package[] = [
     estimated_delivery_date: '2025-08-21',
     estimated_delivery_time: '23:30:00',
     time_zone: 'America/Chicago'
+  },
+  {
+    package_id: 'PKG032',
+    sender: {
+      name: 'Charles Woodley',
+      address: 'Minneapolis, Minnesota (MSP)',
+      contact_number: '626--**',
+      email: '******'
+    },
+    recipient: {
+      name: 'Leopold baricar',
+      address: '91-1021 Makahani Street, Kapolei, Hawaii 96707',
+      contact_number: '808--**',
+      email: '******'
+    },
+    tracking_number: 'Fedex/USA/25/0025635',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Cash Box',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'Minneapolis, MN',
+      destination: 'Kapolei, HI',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Road',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-08-13',
+    package_received_time: '14:00:00',
+    in_transit_date: '2025-08-13',
+    in_transit_time: '16:30:00',
+    out_for_delivery_date: '2025-08-13',
+    out_for_delivery_time: '20:00:00',
+    on_hold_date: '2025-08-13',
+    on_hold_time: '23:30:00',
+    on_hold_desc: 'Package on hold due to customs clearance.',
+    estimated_delivery_date: '2025-08-14',
+    estimated_delivery_time: '01:30:00',
+    time_zone: 'America/Chicago'
   }
 ];
