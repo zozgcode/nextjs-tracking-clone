@@ -50,22 +50,17 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
       {
         label: 'Out for Delivery',
         datetime: formatDatetime(packageInfo.out_for_delivery_date, packageInfo.out_for_delivery_time)
+      },
+      {
+        label: 'Delivered',
+        datetime: formatDatetime(packageInfo.estimated_delivery_date, packageInfo.estimated_delivery_time)
       }
     ];
 
-    // Conditionally add 'Delivered' if not on hold
-    const isOnHoldActive = !!packageInfo.on_hold_date && !!packageInfo.on_hold_time && onHoldTimeReached;
-
-    if (!isOnHoldActive) {
-      rawSteps.push({
-        label: 'Delivered',
-        datetime: formatDatetime(packageInfo.estimated_delivery_date, packageInfo.estimated_delivery_time)
-      });
-    }
-
     const stepsWithDatetime = rawSteps.filter(step => step.datetime);
 
-    // Include "On Hold" if applicable and time has been reached
+    // Check if on hold is active and add it to the steps
+    const isOnHoldActive = !!packageInfo.on_hold_date && !!packageInfo.on_hold_time && onHoldTimeReached;
     const hasOnHoldData = !!packageInfo.on_hold_date && !!packageInfo.on_hold_time;
     const onHoldDatetime = hasOnHoldData && onHoldTimeReached ? formatDatetime(packageInfo.on_hold_date, packageInfo.on_hold_time) : null;
 
@@ -77,11 +72,22 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
     }
 
     // Sort all steps by datetime ascending
-    return stepsWithDatetime.sort((a, b) => {
+    const sortedSteps = stepsWithDatetime.sort((a, b) => {
       const aTime = new Date(a.datetime!).getTime();
       const bTime = new Date(b.datetime!).getTime();
       return aTime - bTime;
     });
+
+    // If "On Hold" is active, filter out any steps that come after it chronologically
+    if (isOnHoldActive && onHoldDatetime) {
+      const onHoldTime = new Date(onHoldDatetime).getTime();
+      return sortedSteps.filter(step => {
+        const stepTime = new Date(step.datetime!).getTime();
+        return stepTime <= onHoldTime;
+      });
+    }
+
+    return sortedSteps;
   }, [packageInfo, onHoldTimeReached]);
 
   const calculateStep = useCallback(() => {
@@ -166,9 +172,9 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
           <div className="vertical-progress-container">
             {steps.map((step, index) => (
               <div key={index} className={`step ${index <= currentStep ? 'active' : ''}`}>
-                <div className={`circle ${step.label === 'On Hold' ? "onHold" : ""}`}></div>
+                <div className={`circle ${step.label === 'On Hold' ? 'onHold' : ''}`}></div>
                 <div className="content">
-                  <p className={`label text-base font-semibold uppercase ${step.label === 'On Hold' ? "text-red-600" : ""}`}>{step.label}</p>
+                  <p className={`label text-base font-semibold uppercase ${step.label === 'On Hold' ? 'text-red-600' : ''}`}>{step.label}</p>
                   {step.datetime && (
                     <p className="text-sm flex flex-col mt-1">
                       {formatDate(step.datetime)}
