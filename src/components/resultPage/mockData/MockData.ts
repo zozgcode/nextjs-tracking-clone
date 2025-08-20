@@ -1478,5 +1478,52 @@ export const mockPackages: Package[] = [
     estimated_delivery_date: '2025-08-14',
     estimated_delivery_time: '01:30:00',
     time_zone: 'America/Chicago'
+  },
+  {
+    package_id: 'PKG033',
+    sender: {
+      name: 'Richard Scott',
+      address: '110, jasim Mohamed Al Bahar St, Kuwait City, Kuwait',
+      contact_number: '+96579*****',
+      email: '******'
+    },
+    recipient: {
+      name: 'Phyllis Cox',
+      address: '4600 w 9th Ave Denver Colorado 80204',
+      contact_number: '******',
+      email: 'tafoyagloria76@gmail.com'
+    },
+    tracking_number: 'Fedex/USA/25/0025636',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'File',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'Kuwait City, Kuwait',
+      destination: 'Denver, Co, USA',
+      comment: 'Handle with care',
+      status: 'Out for delivery',
+      mode: 'Air',
+      value_usd: 50.0
+    },
+    // Y-M-D
+    package_received_date: '2025-08-19',
+    package_received_time: '14:00:00',
+    in_transit_date: '2025-08-20',
+    in_transit_time: '19:30:00',
+    out_for_delivery_date: '2025-08-21',
+    out_for_delivery_time: '20:00:00',
+    on_hold_date: '2025-08-21',
+    on_hold_time: '20:00:00',
+    on_hold_desc: 'Package on hold due to customs clearance.',
+    estimated_delivery_date: '2025-08-22',
+    estimated_delivery_time: '23:30:00',
+    time_zone: 'America/Chicago'
   }
 ];
