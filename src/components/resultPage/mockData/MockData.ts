@@ -1519,7 +1519,7 @@ export const mockPackages: Package[] = [
     in_transit_time: '20:00:00',
     out_for_delivery_date: '2025-08-22',
     out_for_delivery_time: '14:30:00',
-    on_hold_date: '2025-08-21',
+    on_hold_date: '2025-08-22',
     on_hold_time: '02:00:00',
     on_hold_desc: 'Package on hold due to customs clearance.',
     estimated_delivery_date: '2025-08-22',
