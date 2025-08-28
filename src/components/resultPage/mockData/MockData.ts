@@ -1525,5 +1525,50 @@ export const mockPackages: Package[] = [
     estimated_delivery_date: '2025-08-22',
     estimated_delivery_time: '23:30:00',
     time_zone: 'America/Chicago'
+  },
+  {
+    package_id: 'PKG034',
+    sender: {
+      name: 'Horgey Rodney',
+      address: '35949 HIBBELN RD, ONTONAGON MICHIGAN 49953',
+      contact_number: '626-555-****',
+      email: '******'
+    },
+    recipient: {
+      name: 'Malcolm Baggett',
+      address: '8909 Neptune Dr. Cincinnati, Ohio 45231',
+      contact_number: '******',
+      email: '******'
+    },
+    tracking_number: 'Fedex/USA/25/0025650',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Books',
+      quantity: '1',
+      paymentMode: 'Cash',
+      origin: 'Springfield, IL',
+      destination: 'Shelbyville, IL',
+      comment: 'Handle with care',
+      mode: 'Road',
+    },
+    // Y-M-D
+    package_received_date: '2025-08-25',
+    package_received_time: '20:00:00',
+    in_transit_date: '2025-08-28',
+    in_transit_time: '14:00:00',
+    out_for_delivery_date: '2025-08-28',
+    out_for_delivery_time: '16:30:00',
+    on_hold_date: '2025-08-28',
+    on_hold_time: '22:00:00',
+    on_hold_desc: 'Package on hold due to customs clearance.',
+    estimated_delivery_date: '2025-08-28',
+    estimated_delivery_time: '23:30:00',
+    time_zone: 'America/Chicago'
   }
 ];

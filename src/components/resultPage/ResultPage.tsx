@@ -151,8 +151,9 @@ export default function ResultPage({ packageInfo }: ResultPageProps) {
     return new Date(datetime).toLocaleTimeString(undefined, options);
   };
 
-  const getStatus = (step: number) => {
+   const getStatus = (step: number) => {
     if (step < 0) return 'Processing';
+    if (step >= steps.length) return 'Processing';
     return steps[step].label;
   };
 

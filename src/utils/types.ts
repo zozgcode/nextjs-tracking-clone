@@ -30,7 +30,7 @@ export interface Package {
     destination: string;
     comment: string;
     status?: string;
-    value_usd: number;
+    value_usd?: number;
   };
   package_received_date: string;
   package_received_time: string;
