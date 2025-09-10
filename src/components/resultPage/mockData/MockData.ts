@@ -1615,5 +1615,50 @@ export const mockPackages: Package[] = [
     estimated_delivery_date: '2025-10-08',
     estimated_delivery_time: '23:30:00',
     time_zone: 'America/Chicago'
+  },
+  {
+    package_id: 'PKG036',
+    sender: {
+      name: 'Irvin’s Lemon',
+      address: 'LINCOLN NE 68516-1117',
+      contact_number: '626***',
+      email: '******'
+    },
+    recipient: {
+      name: 'Cornell Myles',
+      address: '628 w Ellis Ave Inglewood California 90302',
+      contact_number: '310***',
+      email: '******'
+    },
+    tracking_number: 'Fedex/USA/25/0025652',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Cash Box',
+      quantity: '1',
+      paymentMode: 'Bitcoin',
+      origin: 'Lincoln, NE',
+      destination: 'Inglewood, CA',
+      comment: 'Handle with care',
+      mode: 'Road',
+    },
+    // Y-M-D
+    package_received_date: '2025-09-03',
+    package_received_time: '16:00:00',
+    in_transit_date: '2025-09-10',
+    in_transit_time: '14:00:00',
+    out_for_delivery_date: '2025-09-10',
+    out_for_delivery_time: '20:00:00',
+    on_hold_date: '2025-09-11',
+    on_hold_time: '02:00:00',
+    on_hold_desc: 'Package on hold due to customs clearance.',
+    estimated_delivery_date: '2025-09-11',
+    estimated_delivery_time: '03:00:00',
+    time_zone: 'America/Chicago'
   }
 ];
