@@ -1655,10 +1655,10 @@ export const mockPackages: Package[] = [
     out_for_delivery_date: '2025-09-10',
     out_for_delivery_time: '20:00:00',
     on_hold_date: '2025-09-11',
-    on_hold_time: '02:00:00',
+    on_hold_time: '11:30:00',
     on_hold_desc: 'Package on hold due to customs clearance.',
     estimated_delivery_date: '2025-09-11',
-    estimated_delivery_time: '03:00:00',
+    estimated_delivery_time: '12:00:00',
     time_zone: 'America/Chicago'
   }
 ];
