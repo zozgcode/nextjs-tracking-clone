@@ -1570,5 +1570,50 @@ export const mockPackages: Package[] = [
     estimated_delivery_date: '2025-08-28',
     estimated_delivery_time: '23:30:00',
     time_zone: 'America/Chicago'
+  },
+  {
+    package_id: 'PKG035',
+    sender: {
+      name: 'Mark Smith',
+      address: '******',
+      contact_number: '******',
+      email: '******'
+    },
+    recipient: {
+      name: 'Dani Jensen',
+      address: '3337 RT 332 Williamsfield OH 44093',
+      contact_number: '******',
+      email: '******'
+    },
+    tracking_number: 'Fedex/USA/25/0025651',
+    package_details: {
+      weight_kg: 10,
+      dimensions_cm: {
+        length: 30,
+        width: 20,
+        height: 15
+      },
+      courier: 'Fedex',
+      packages: 'Gold Bars',
+      quantity: 'KG',
+      paymentMode: 'Cash',
+      origin: 'Hamburg, DE',
+      destination: 'Williamsfield, OH',
+      comment: 'Handle with care',
+      mode: 'Road',
+    },
+    // Y-M-D
+    package_received_date: '2025-09-09',
+    package_received_time: '16:00:00',
+    in_transit_date: '2025-09-11',
+    in_transit_time: '14:00:00',
+    out_for_delivery_date: '2025-10-08',
+    out_for_delivery_time: '15:30:00',
+    on_hold_date: '',
+    on_hold_time: '',
+    on_hold_desc: 'Package on hold due to customs clearance.',
+    estimated_delivery_date: '2025-10-08',
+    estimated_delivery_time: '23:30:00',
+    time_zone: 'America/Chicago'
   }
 ];
