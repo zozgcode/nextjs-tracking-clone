@@ -1,6 +1,8 @@
 // src/utils/types.ts
 export interface Package {
   package_id: string;
+  dateCreated?: string;
+  dateUpdated?: string;
   sender: {
     name: string;
     address: string;

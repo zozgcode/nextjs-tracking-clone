@@ -1573,6 +1573,7 @@ export const mockPackages: Package[] = [
   },
   {
     package_id: 'PKG035',
+    dateCreated: '9/11/2025', // m/d/y
     sender: {
       name: 'Mark Smith',
       address: '******',
@@ -1618,6 +1619,7 @@ export const mockPackages: Package[] = [
   },
   {
     package_id: 'PKG036',
+    dateCreated: '9/11/2025', // m/d/y
     sender: {
       name: 'Irvin’s Lemon',
       address: 'LINCOLN NE 68516-1117',
